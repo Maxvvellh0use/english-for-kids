@@ -1,0 +1,32 @@
+{
+  "name": "english-for-kids",
+  "version": "1.0.0",
+  "description": "english language training app on native JS and SASS",
+  "main": "index.js",
+  "scripts": {
+    "style": "sass --watch src/sass/style.scss src/sass/style.css",
+    "dev": "webpack --mode development",
+    "prod": "webpack --mode production",
+    "es watch": "",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Maxvvellh0use/english-for-kids.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Maxvvellh0use/english-for-kids/issues"
+  },
+  "homepage": "https://github.com/Maxvvellh0use/english-for-kids#readme",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "node-sass": "^4.13.1",
+    "sass": "^1.26.3",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.1.3",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
+  }
+}
