@@ -4,3 +4,9 @@
   margin: 0 auto;
   box-sizing: border-box;
 }
+.hamburger_and_switch {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px 0;
+}
