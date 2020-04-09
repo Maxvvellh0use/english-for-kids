@@ -1,0 +1,10 @@
+.categories__cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1 0 20%;
+  max-width: 18rem;
+  margin: 10px;
+}
