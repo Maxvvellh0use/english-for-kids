@@ -1,12 +1,13 @@
+@import "../abstract/constants";
+a {
+  color: $color-links !important;
+  text-decoration: none !important;
+}
+
 .wrapper {
   max-width: 1250px;
   padding: 0 40px;
   margin: 0 auto;
   box-sizing: border-box;
-}
-.hamburger_and_switch {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 20px 0;
+  overflow: hidden;
 }

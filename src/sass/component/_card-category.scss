@@ -8,6 +8,14 @@
   max-width: 18rem;
   max-height: 18rem;
   margin: 10px;
+  @media (max-width: 1019px) {
+    flex: 1 0 45%;
+  }
+}
+
+.card-body {
+  background: $color-card-body;
+  text-shadow: 2px 4px 3px rgba(0,0,0,0.3);;
 }
 
 .card-text {
