@@ -36,14 +36,14 @@ export default class HamburgerMenu {
 
   transformBurger() {
     if (clicksHamburger === 0) {
-      HAMBURGER_LINES[0].style.transform = 'rotate(45deg)' + 'translateY(5px)';
-      HAMBURGER_LINES[1].style.transform = 'rotate(-45deg)' + 'translateY(-5px)';
-      HAMBURGER_LINES[2].style.display = 'none';
+      HAMBURGER_LINES[0].style.transform = 'rotate(45deg)' + 'translateY(10px)';
+      HAMBURGER_LINES[2].style.transform = 'rotate(-45deg)' + 'translateY(-10px)';
+      HAMBURGER_LINES[1].style.opacity = '0';
     }
     else {
       HAMBURGER_LINES[0].style.transform = 'rotate(0deg)' + 'translateY(0px)';
-      HAMBURGER_LINES[1].style.transform = 'rotate(0deg)' + 'translateY(0px)';
-      HAMBURGER_LINES[2].style.display = 'block';
+      HAMBURGER_LINES[2].style.transform = 'rotate(0deg)' + 'translateY(0px)';
+      HAMBURGER_LINES[1].style.opacity = '1';
     }
 
   }

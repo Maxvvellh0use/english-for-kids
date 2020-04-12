@@ -256,6 +256,7 @@ input.cmn-toggle-round-flat:checked + label:after {
 }
 
 .header__hamburger {
+  cursor: pointer;
   z-index: 16;
   width: 25px;
   height: 20px;
@@ -289,6 +290,7 @@ input.cmn-toggle-round-flat:checked + label:after {
 }
 
 .hamburger_menu__list__item {
+  cursor: pointer;
   list-style-type: none;
   padding: 12px 0 13px 0;
 }
