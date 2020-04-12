@@ -9,11 +9,9 @@ export default class Categories {
 
   openMainPage() {
       window.addEventListener('popstate', () => {
-          console.log('lala');
           categoryPageContainer.style.display = 'none';
           mainPageContainer.style.display = 'block';
       });
-      // history.replaceState({ 'page_id': 1}, 'Cards', 'main');
   }
 
   openCategoryPage() {
