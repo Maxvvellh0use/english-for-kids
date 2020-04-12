@@ -1,31 +1,50 @@
 import cards from '../../cards';
-import { cardCategoriesImg, cardCategoriesText, linksCategories, mainPageContainer, categoryPageContainer } from '../../constants/constants';
+import {
+    HAMBURGER_LINKS,
+    CARD_CATEGORIES_IMG,
+    CARD_CATEGORIES_TEXT,
+    LINKS_CATEGORIES,
+    MAIN_PAGE_CONTAINER,
+    CATEGORY_PAGE_CONTAINER,
+    TITLE_CATEGORY
+} from '../../constants/constants';
 let clickLink = 0;
 
 export default class Categories {
   constructor() {
     this.actionSetA = this.actionSetA.bind(this);
+    // this.openCategoryPage = this.openCategoryPage(this);
   }
 
   openMainPage() {
       window.addEventListener('popstate', () => {
-          categoryPageContainer.style.display = 'none';
-          mainPageContainer.style.display = 'block';
+          CATEGORY_PAGE_CONTAINER.style.display = 'none';
+          MAIN_PAGE_CONTAINER.style.display = 'block';
+          TITLE_CATEGORY.innerHTML = '';
       });
   }
 
-  openCategoryPage() {
-          linksCategories.forEach(link => {
-              link.addEventListener('click', () => {
-                  categoryPageContainer.style.display = 'block';
-                  mainPageContainer.style.display = 'none';
-                  history.pushState({ 'page_id': 2}, 'Cards', 'index.html#');
-              });
-      })
+  openCategoryPage(link) {
+      TITLE_CATEGORY.innerHTML = link.textContent;
+      CATEGORY_PAGE_CONTAINER.style.display = 'block';
+      MAIN_PAGE_CONTAINER.style.display = 'none';
+      history.pushState({ 'page_id': 2}, 'Cards', 'index.html#');
   }
 
+
   actionSetA() {
-      this.openCategoryPage();
+      LINKS_CATEGORIES.forEach(link => {
+          link.addEventListener('click', () => {
+              this.openCategoryPage(link);
+          });
+      });
+      HAMBURGER_LINKS.forEach(link => {
+          link.addEventListener('click', () => {
+              this.openCategoryPage(link);
+          });
+      });
+
+
     // window.addEventListener('onload', () => {
     //   console.log(cards[0].image);
     //   cards[0].map((card, index) => {
