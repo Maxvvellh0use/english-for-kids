@@ -15,12 +15,12 @@ export default class Categories {
   }
 
   openCategoryPage() {
-      mainPageContainer.addEventListener('click', event => {
           linksCategories.forEach(link => {
-              categoryPageContainer.style.display = 'block';
-              mainPageContainer.style.display = 'none';
-          });
-          history.pushState({ 'page_id': 2}, 'Cards', 'index.html#');
+              link.addEventListener('click', () => {
+                  categoryPageContainer.style.display = 'block';
+                  mainPageContainer.style.display = 'none';
+                  history.pushState({ 'page_id': 2}, 'Cards', 'index.html#');
+              });
       })
   }
 
