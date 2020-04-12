@@ -4,6 +4,7 @@
 }
 
 .card {
+  cursor: pointer;
   flex: 1 0 20%;
   max-width: 18rem;
   max-height: 18rem;
@@ -16,6 +17,11 @@
 .card-body {
   background: $color-card-body;
   text-shadow: 2px 4px 3px rgba(0,0,0,0.3);;
+}
+
+.category_card_body {
+  height: 30px;
+  background: $color-category-card-body;
 }
 
 .card-text {

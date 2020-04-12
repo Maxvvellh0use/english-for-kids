@@ -11,12 +11,21 @@ a {
   overflow: hidden;
 }
 
+.container {
+  max-width: 1250px;
+}
+
+.category_container {
+  display: none;
+}
+
 .categories__cards {
   display: flex;
   flex-wrap: wrap;
 }
 
 .card {
+  cursor: pointer;
   flex: 1 0 20%;
   max-width: 18rem;
   max-height: 18rem;
@@ -31,6 +40,11 @@ a {
 .card-body {
   background: radial-gradient(at top, #FEFFFF, #A7CECC);
   text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+}
+
+.category_card_body {
+  height: 30px;
+  background: white;
 }
 
 .card-text {

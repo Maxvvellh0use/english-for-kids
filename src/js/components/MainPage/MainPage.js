@@ -1,11 +1,11 @@
 const ROOT = document.getElementById('root');
 
 class MainPage {
-    constructor() {
+  constructor() {
 
-    }
+  }
 
-    createNavigation() {
-        ROOT.insertAdjacentHTML('afet')
-    }
+  createNavigation() {
+    ROOT.insertAdjacentHTML('afet');
+  }
 }
