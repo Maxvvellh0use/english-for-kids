@@ -42,6 +42,9 @@
   background-color: #2d303a;
   height: 100vh;
   width: 25vw;
+  @media (max-width: 767px) {
+    width: 50vw;
+  }
 }
 .hamburger_menu__nav {
   position: absolute;
@@ -53,7 +56,9 @@
 
 .hamburger_menu__list {
   margin-top: 134px;
-  margin-left: 24px;
+  @media (max-width: 767px) {
+    margin-left: 0;
+  }
 }
 .hamburger_menu__list__item {
   cursor: pointer;
@@ -64,4 +69,7 @@
 .hamburger_menu__list__item a {
   font-size: 19px;
   font-weight: bold;
+  @media (max-width: 767px) {
+    font-size: 15px;
+  }
 }

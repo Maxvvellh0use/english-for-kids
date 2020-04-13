@@ -1,8 +1,7 @@
 import cards from '../../cards';
 import {
     HAMBURGER_LINKS,
-    CARD_CATEGORIES_IMG,
-    CARD_CATEGORIES_TEXT,
+    CARD_CATEGORIES,
     LINKS_CATEGORIES,
     MAIN_PAGE_CONTAINER,
     CATEGORY_PAGE_CONTAINER,
@@ -25,9 +24,9 @@ export default class Categories {
 
   appendContentsToCategory(indexCard) {
       cards[indexCard].map((elem, index) => {
-          CARD_CATEGORIES_IMG[index].innerHTML = '';
-          CARD_CATEGORIES_IMG[index].insertAdjacentHTML('afterbegin', `<div class="card-body category_card_body"><p class="card-text">${elem.word}</p>`);
-          CARD_CATEGORIES_IMG[index].insertAdjacentHTML('afterbegin', `<img src="${elem.image}" class="categories__cards_img">`)
+          CARD_CATEGORIES[index].innerHTML = '';
+          CARD_CATEGORIES[index].insertAdjacentHTML('afterbegin', `<div class="card-body category_card_body"><p class="card-text">${elem.word}</p>`);
+          CARD_CATEGORIES[index].insertAdjacentHTML('afterbegin', `<img src="${elem.image}" class="categories__cards_img">`)
 
       });
   }
@@ -62,25 +61,6 @@ export default class Categories {
               default:
                   break;
           }
-
-
-          // CARD_CATEGORIES_IMG.append(`<img src="${imagesArr}>`);
-
-          // imagesArr[1].map((img, indx) => {
-          //     return CARD_CATEGORIES_IMG[indx].append(`<img src="${img}>`);
-          // });
-
-          // cardsMap.map((elem, indexCard) => {
-          //     CARD_CATEGORIES_IMG[0].append(`<img src="${elem}>"`);
-          // });
-
-      //     cards[index].map((card,indCard) => {
-      //         // console.log(card)
-      //         // card.map(img => CARD_CATEGORIES_IMG[indLin].append(`<img src="${img.image}>"`))
-      //         // console.log(card.image);
-      //         // CARD_CATEGORIES_IMG[indLin].append(`<img src="${card[indCard].image}>"`);
-      //     })
-      // });
       TITLE_CATEGORY.innerHTML = link.textContent;
       CATEGORY_PAGE_CONTAINER.style.display = 'block';
       MAIN_PAGE_CONTAINER.style.display = 'none';
@@ -99,24 +79,17 @@ export default class Categories {
               this.openCategoryPage(link);
           });
       });
-
-
-    // window.addEventListener('onload', () => {
-    //   console.log(cards[0].image);
-    //   cards[0].map((card, index) => {
-    //     setTimeout(() => cardCategoriesImg[index].forEach((cardImg) => {
-    //       cardImg.insertAdjacentHTML('afterbegin', `<img src="${cards[0].image}">`);
-    //     }), 400);
-    //   });
-    // });
+      this.playingWords()
   }
 
-  // else {
-  //
-  // }
-  generateContent(numberCategory) {
-    cards.map((card) => {
-
-    });
+  playingWords() {
+      CARD_CATEGORIES.forEach(card => {
+          card.addEventListener('click', () => {
+              let audio = new Audio(`src/audio/${card.textContent}.mp3`);
+              audio.play().then(() => audio.preload = 'auto');
+              console.log(card.textContent);
+          })
+      })
   }
+
 }

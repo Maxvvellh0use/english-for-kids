@@ -6,5 +6,11 @@
 }
 
 .header_title {
+  @media (min-width: 1020px) {
+    font-size: 30px;
+  }
+  @media (max-width: 1020px) {
+    font-size: 20px;
+  }
 
 }
