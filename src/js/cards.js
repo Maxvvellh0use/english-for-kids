@@ -301,9 +301,6 @@ export const cards = [
   ],
 
 
-
-
-
   [
     {
       word: 'engineer',

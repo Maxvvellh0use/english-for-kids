@@ -3,7 +3,13 @@ a {
   text-decoration: none !important;
 }
 
+.categories {
+  width: 100%;
+}
+
 .wrapper {
+  display: flex;
+  width: 100%;
   max-width: 1250px;
   padding: 0 40px;
   margin: 0 auto;
@@ -13,6 +19,7 @@ a {
 
 .container {
   max-width: 1250px;
+  overflow: hidden;
 }
 
 .category_container {
@@ -22,18 +29,32 @@ a {
 .categories__cards {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  width: 100% !important;
 }
 
 .card {
   cursor: pointer;
-  flex: 1 0 20%;
   max-width: 18rem;
   max-height: 18rem;
   margin: 10px;
+  flex: 1 0 20%;
 }
-@media (max-width: 1019px) {
+@media (max-width: 1020px) {
   .card {
-    flex: 1 0 45%;
+    flex: 1 0 35%;
+    max-width: 20rem;
+    max-height: 20rem;
+  }
+}
+@media (max-width: 767px) {
+  .card {
+    flex: 1 0 50%;
+  }
+}
+@media (max-width: 360px) {
+  .card {
+    flex: 1 0 65%;
   }
 }
 
@@ -268,8 +289,9 @@ input.cmn-toggle-round-flat:checked + label:after {
 .header__hamburger_menu {
   display: none;
   position: absolute;
+  float: left;
   z-index: 16;
-  transform: translateX(-75vw);
+  transform: translateX(-35vw);
   transition: all 0.6s ease;
   background-color: #2d303a;
   height: 100vh;
@@ -280,11 +302,16 @@ input.cmn-toggle-round-flat:checked + label:after {
     width: 50vw;
   }
 }
+@media (min-width: 1020px) {
+  .header__hamburger_menu {
+    width: 18vw;
+  }
+}
 
 .hamburger_menu__nav {
   position: absolute;
   display: flex;
-  transform: translateX(-75vw);
+  transform: translateX(-35vw);
   flex-direction: column;
   justify-content: center;
 }

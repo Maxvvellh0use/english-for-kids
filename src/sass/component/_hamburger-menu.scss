@@ -36,8 +36,9 @@
 .header__hamburger_menu {
   display: none;
   position: absolute;
+  float:left;
   z-index: 16;
-  transform: translateX(-75vw);
+  transform: translateX(-35vw);
   transition: all .6s ease;
   background-color: #2d303a;
   height: 100vh;
@@ -45,11 +46,14 @@
   @media (max-width: 767px) {
     width: 50vw;
   }
+  @media (min-width: 1020px) {
+    width: 18vw;
+  }
 }
 .hamburger_menu__nav {
   position: absolute;
   display: flex;
-  transform: translateX(-75vw);
+  transform: translateX(-35vw);
   flex-direction: column;
   justify-content: center;
 }
