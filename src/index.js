@@ -10,5 +10,5 @@ HAMBURGER_LIST.addEventListener('click', event => hamburger.closeAfterClickToLin
 
 
 const categories = new Categories();
-categories.actionSetA();
+categories.linksListeners();
 categories.openMainPage();

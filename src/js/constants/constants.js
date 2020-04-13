@@ -1,6 +1,6 @@
 //mainPage:
 export const MAIN_PAGE_CONTAINER = document.getElementById('main_page');
-export const LINKS_CATEGORIES = document.querySelectorAll('.card');
+export const LINKS_CATEGORIES = document.querySelectorAll('.card_main');
 
 // hamburger:
 export const HAMBURGER = document.getElementById('hamburger');
@@ -12,7 +12,7 @@ export const HAMBURGER_LINKS = document.querySelectorAll('.hamburger_menu__list_
 
 // categoriesPage:
 export const CATEGORY_PAGE_CONTAINER = document.getElementById('category_page');
-export const CARD_CATEGORIES_IMG = document.querySelectorAll('.category-card img');
-export const CARD_CATEGORIES_TEXT = document.querySelectorAll('.category-card-body h5');
+export const CARD_CATEGORIES_IMG = document.querySelectorAll('.card_category');
+export const CARD_CATEGORIES_TEXT = document.querySelectorAll('.category-card-body p');
 export const TITLE_CATEGORY = document.getElementById('header_title');
 

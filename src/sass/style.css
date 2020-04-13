@@ -307,4 +307,12 @@ input.cmn-toggle-round-flat:checked + label:after {
   padding: 40px 12px;
 }
 
+.categories__cards_img {
+  max-height: 10rem !important;
+}
+
+.category_card_body {
+  height: 65px !important;
+}
+
 /*# sourceMappingURL=style.css.map */
