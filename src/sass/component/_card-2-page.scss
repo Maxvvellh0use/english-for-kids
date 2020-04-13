@@ -3,9 +3,17 @@
 }
 
 .category_card_body {
-  height: 65px !important;
+  height: 10px !important;
 }
 
 .card-text {
   font-weight: bolder;
+}
+
+.card-translate {
+  margin: 0;
+  z-index: 30;
+  //display: none;
+  font-weight: bolder;
+  text-align: center;
 }

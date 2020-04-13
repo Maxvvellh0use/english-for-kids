@@ -11,6 +11,7 @@
   max-height: 18rem;
   margin: 10px;
   flex: 1 0 20%;
+  transition: all ease-out .3s;
   @media (max-width: 1020px) {
     flex: 1 0 35%;
     max-width: 20rem;
@@ -43,11 +44,11 @@
 }
 
 
-//@media (max-width: 1020px) {
-//  .card {
-//    flex: 1 0 40%;
-//  }
-//}
+
+.card:hover {
+  box-shadow: 0px 0px 10px $color-text-card;
+}
+
 
 
 

@@ -13,7 +13,9 @@ export const HAMBURGER_LINKS = document.querySelectorAll('.hamburger_menu__list_
 // categoriesPage:
 export const CATEGORY_PAGE_CONTAINER = document.getElementById('category_page');
 export const CARD_CATEGORIES = document.querySelectorAll('.card_category');
-// export const CARD_CATEGORIES_TEXT = document.querySelectorAll('.category-card-body p');
+export const CARD_BODY = document.querySelectorAll('.category_card_body');
 export const TITLE_CATEGORY = document.getElementById('header_title');
+
+
 
 
