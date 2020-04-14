@@ -1,4 +1,4 @@
-//mainPage:
+// mainPage:
 export const MAIN_PAGE_CONTAINER = document.getElementById('main_page');
 export const LINKS_CATEGORIES = document.querySelectorAll('.card_main');
 
@@ -15,7 +15,3 @@ export const CATEGORY_PAGE_CONTAINER = document.getElementById('category_page');
 export const CARD_CATEGORIES = document.querySelectorAll('.card_category');
 export const CARD_BODY = document.querySelectorAll('.category_card_body');
 export const TITLE_CATEGORY = document.getElementById('header_title');
-
-
-
-

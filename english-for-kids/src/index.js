@@ -1,5 +1,6 @@
+import './sass/style.scss';
 import HamburgerMenu from './js/components/Header/HamburgerMenu.js';
-import Categories from "./js/components/Card/Categories";
+import Categories from './js/components/Card/Categories.js';
 import {HAMBURGER,BLACKOUT, HAMBURGER_LIST} from "./js/constants/constants";
 
 const hamburger = new HamburgerMenu();

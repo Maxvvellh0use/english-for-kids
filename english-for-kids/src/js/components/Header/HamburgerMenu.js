@@ -4,7 +4,7 @@ import {
   HAMBURGER_NAV,
   BLACKOUT,
   HAMBURGER_LINES,
-  HAMBURGER_LINKS
+  HAMBURGER_LINKS,
 } from '../../constants/constants';
 
 let clicksHamburger = 0;
@@ -39,13 +39,11 @@ export default class HamburgerMenu {
       HAMBURGER_LINES[0].style.transform = 'rotate(45deg)' + 'translateY(10px)';
       HAMBURGER_LINES[2].style.transform = 'rotate(-45deg)' + 'translateY(-10px)';
       HAMBURGER_LINES[1].style.opacity = '0';
-    }
-    else {
+    } else {
       HAMBURGER_LINES[0].style.transform = 'rotate(0deg)' + 'translateY(0px)';
       HAMBURGER_LINES[2].style.transform = 'rotate(0deg)' + 'translateY(0px)';
       HAMBURGER_LINES[1].style.opacity = '1';
     }
-
   }
 
   closeHamburgerMenu() {
@@ -59,17 +57,14 @@ export default class HamburgerMenu {
   }
 
   isHamburgerMenu() {
-    document.addEventListener('click', event => {
-      return event.target === HAMBURGER_LIST || event.target === HAMBURGER_NAV;
-    })
+    document.addEventListener('click', (event) => event.target === HAMBURGER_LIST || event.target === HAMBURGER_NAV);
   }
 
   closeAfterClickToLinks(event) {
-    HAMBURGER_LINKS.forEach(link => {
-      if(event.target === link) {
-        this.closeHamburgerMenu()
+    HAMBURGER_LINKS.forEach((link) => {
+      if (event.target === link) {
+        this.closeHamburgerMenu();
       }
-    })
+    });
   }
-
 }
