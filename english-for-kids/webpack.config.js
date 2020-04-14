@@ -17,8 +17,8 @@ module.exports = {
     },
     plugins: [
         new MiniCssExtractPlugin({
-            template: './src/sass/style.css',
-            filename: './src/sass/style.css'
+            template: './english-for-kids/src/sass/style.css',
+            filename: './english-for-kids/src/sass/style.css'
         }),
         new HtmlWebpackPlugin({
             template: './index.html',

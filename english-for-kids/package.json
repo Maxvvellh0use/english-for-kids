@@ -4,11 +4,11 @@
   "description": "english language training app on native JS and SASS",
   "main": "index.js",
   "scripts": {
-    "start:dev": "webpack-dev-server",
-    "style": "sass --watch src/sass/style.scss src/sass/style.css",
-    "dev": "webpack -w",
-    "prod": "webpack --mode production",
-    "esw": "esw --watch src/js",
+    "start:dev": "node_modules/.bin/webpack-dev-server",
+    "style": "node_modules/.bin/sass --watch src/sass/style.scss src/sass/style.css",
+    "dev": "node_modules/.bin/webpack -w",
+    "prod": "node_modules/.bin/webpack --mode production",
+    "esw": "node_modules/.bin/esw --watch english-for-kids/src/js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "http-server -c-1 -p 8081"
   },
