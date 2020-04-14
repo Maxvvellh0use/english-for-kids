@@ -65,9 +65,17 @@
   }
 }
 .hamburger_menu__list__item {
-  cursor: pointer;
   list-style-type: none;
   padding: 12px 0 13px 0;
+}
+
+.hamburger_menu__list__item a:hover {
+  cursor: pointer;
+  color: $color-active-links !important;
+}
+
+.active_link {
+  color: $color-active-links !important;
 }
 
 .hamburger_menu__list__item a {

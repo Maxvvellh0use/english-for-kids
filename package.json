@@ -4,7 +4,7 @@
   "description": "english language training app on native JS and SASS",
   "main": "index.js",
   "scripts": {
-    "style": "sass --watch english-for-kids/src/sass/style.scss src/sass/style.css",
+    "style": "sass --watch english-for-kids/src/sass/style.scss dist/src/sass/style.css",
     "build": "webpack -w",
     "dev": "webpack --mode development",
     "prod": "webpack --mode production",

@@ -1,0 +1,26 @@
+.card-body__button {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  width: 30px;
+  float: right;
+  transition: all ease-out .3s;
+}
+
+.svg_button {
+  width: 20px;
+  height: 30px;
+}
+
+.button_play {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.button_play__button button {
+  font-family: $font-body !important;
+  font-weight: bolder;
+  font-size: 23px;
+  width: calc(33vw + 8px);
+}

@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-named-as-default
 import cards from '../../cards';
 import {
   HAMBURGER_LINKS,
@@ -7,8 +6,6 @@ import {
   MAIN_PAGE_CONTAINER,
   CATEGORY_PAGE_CONTAINER,
   TITLE_CATEGORY,
-  CARD_BUTTON,
-  CARD_BODY,
 } from '../../constants/constants';
 
 export default class Categories {
@@ -76,9 +73,17 @@ export default class Categories {
         this.openCategoryPage(link);
       });
     });
+        // link.classList.remove('active_link');
     HAMBURGER_LINKS.forEach((link) => {
-      link.addEventListener('click', () => {
-        this.openCategoryPage(link);
+      link.classList.remove('active_link');
+      link.addEventListener('click', (event) => {
+        HAMBURGER_LINKS.forEach((activeLink) => {
+          activeLink.classList.remove('active_link');
+        });
+        if (event.target.classList.contains('link')) {
+          link.classList.add('active_link');
+          this.openCategoryPage(link);
+        }
       });
     });
     this.playingWords();
