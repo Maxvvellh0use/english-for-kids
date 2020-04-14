@@ -28,9 +28,9 @@ export default class Categories {
     cards[indexCard].map((elem, index) => {
       CARD_CATEGORIES[index].innerHTML = '';
       CARD_CATEGORIES[index].insertAdjacentHTML('afterbegin', '<button class="card-body__button"><img class="svg_button" src="src/img/rotate.svg"></button>');
+      CARD_CATEGORIES[index].insertAdjacentHTML('afterbegin', `<div class="card-body category_card_body card_translate" style="display: none"><p class="card-text">${elem.translation}</p>`);
       CARD_CATEGORIES[index].insertAdjacentHTML('afterbegin', `<div class="card-body category_card_body category_text"><p class="card-text">${elem.word}</p>`);
       CARD_CATEGORIES[index].insertAdjacentHTML('afterbegin', `<img src="${elem.image}" class="categories__cards_img">`);
-      CARD_CATEGORIES[index].insertAdjacentHTML('afterbegin', `<div class="card-body category_card_body card-translate" style="display: none"><p>${elem.translation}</p>`);
     });
   }
 
@@ -97,30 +97,35 @@ export default class Categories {
 
   rotateListeners() {
     const cardButtons = document.querySelectorAll('.card-body__button');
-    const cardText = document.querySelectorAll('.card-text');
-    const cardTranslation = document.querySelectorAll('.card-translate');
+    const cardText = document.querySelectorAll('.category_text');
+    const cardTranslation = document.querySelectorAll('.card_translate');
     cardButtons.forEach((button, index) => {
       button.addEventListener('click', (event) => {
         event.preventDefault();
-        return this.rotateToTranslate(button, cardText, index);
+        return this.rotateToTranslate(button, cardText, index, cardTranslation);
       });
       button.parentElement.addEventListener('mouseleave', (event) => {
         event.preventDefault();
-        return this.backRotate(button);
+        return this.backRotate(button, cardText, index, cardTranslation);
       });
     });
   }
 
-  rotateToTranslate(button, cardText, index) {
-    console.log(index);
-    cardText[index].style.display = 'none';
-    button.style.opacity = '0';
-    button.parentElement.style.transform = 'rotateY(180deg)';
+  rotateToTranslate(button, cardText, index, cardTranslation) {
+      cardText[index].style.display = 'none';
+      cardTranslation[index].style.display = 'block';
+      button.style.opacity = '0';
+      button.parentElement.style.transform = 'rotateY(180deg)';
+      cardTranslation[index].style.transform = 'rotateY(-180deg)';
   }
 
 
-  backRotate(button) {
-    button.style.opacity = '1';
-    button.parentElement.style.transform = 'rotateY(0deg)';
+  backRotate(button, cardText, index, cardTranslation) {
+      cardText[index].style.display = 'block';
+      cardTranslation[index].style.display = 'none';
+      button.style.opacity = '1';
+      if (button.parentElement) {
+        button.parentElement.style.transform = 'rotateY(0deg)';
+      }
   }
 }

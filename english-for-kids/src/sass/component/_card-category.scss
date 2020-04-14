@@ -33,6 +33,7 @@
 .category_card_body {
   height: 30px;
   background: $color-category-card-body;
+  transition: all ease-out .3s;
 }
 
 .card-text {

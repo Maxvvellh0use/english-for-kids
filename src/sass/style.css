@@ -67,6 +67,7 @@ a {
 .category_card_body {
   height: 30px;
   background: white;
+  transition: all ease-out 0.3s;
 }
 
 .card-text {
