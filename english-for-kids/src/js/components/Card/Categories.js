@@ -22,31 +22,27 @@ export default class Categories {
     });
   }
 
-  createContentsToCategory(indexCard, styleCard, styleImg) {
+  createContentsToCategory(indexCard, styleImg) {
     cards[indexCard].map((elem, index) => {
       CARD_CATEGORIES[index].innerHTML = '';
-      CARD_CATEGORIES[index].insertAdjacentHTML('afterbegin', `<button class="card-body__button" style="${styleCard}"><img class="svg_button" src="src/img/rotate.svg"></button>`);
+      CARD_CATEGORIES[index].insertAdjacentHTML('afterbegin', `<button class="card-body__button"><img class="svg_button" src="src/img/rotate.svg"></button>`);
       CARD_CATEGORIES[index].insertAdjacentHTML('afterbegin', `<div class="card-body category_card_body card_translate" style="display: none"><p class="card-text">${elem.translation}</p>`);
-      CARD_CATEGORIES[index].insertAdjacentHTML('afterbegin', `<div class="card-body category_card_body category_text" style="${styleCard}"><p class="card-text">${elem.word}</p>`);
+      CARD_CATEGORIES[index].insertAdjacentHTML('afterbegin', `<div class="card-body category_card_body category_text"><p class="card-text">${elem.word}</p>`);
       CARD_CATEGORIES[index].insertAdjacentHTML('afterbegin', `<img src="${elem.image}" class="categories__cards_img" style="${styleImg}">`);
     });
   }
 
 
   appendContentsToCategory(indexCard) {
-    let styleCard = '';
     let styleImg = '';
     const switcher = new Switcher();
-    console.log(switcher.check()) ;
-    styleCard = 'display: block;';
-    styleImg = 'height: 13rem;';
     if (switcher.check() === false) {
-      this.createContentsToCategory(indexCard, styleCard, styleImg);
+      styleImg = 'transform: scaleY(1) translateY(0px);';
+      this.createContentsToCategory(indexCard, styleImg);
     }
     else {
-      styleCard = 'display: none;';
-      styleImg = 'max-height: 15rem;';
-      this.createContentsToCategory(indexCard, styleCard, styleImg);
+      styleImg = 'transform: scaleY(1.5) translateY(25px)';
+      this.createContentsToCategory(indexCard, styleImg);
     }
   }
 
