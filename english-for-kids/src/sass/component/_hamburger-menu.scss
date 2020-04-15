@@ -50,6 +50,11 @@
     width: 18vw;
   }
 }
+
+.menu_play {
+  background: $color-background-checkbox;
+}
+
 .hamburger_menu__nav {
   position: absolute;
   display: flex;
@@ -64,6 +69,8 @@
     margin-left: 0;
   }
 }
+
+
 .hamburger_menu__list__item {
   list-style-type: none;
   padding: 12px 0 13px 0;

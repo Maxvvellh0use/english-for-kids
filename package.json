@@ -6,7 +6,7 @@
   "scripts": {
     "style": "sass --watch english-for-kids/src/sass/style.scss dist/src/sass/style.css",
     "build": "webpack -w",
-    "dev": "webpack --mode development",
+    "dev": "webpack -w --mode development",
     "prod": "webpack --mode production",
     "esw": "esw --watch english-for-kids/src/js",
     "test": "echo \"Error: no test specified\" && exit 1",

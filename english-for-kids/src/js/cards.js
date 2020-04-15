@@ -170,7 +170,7 @@ export const cards = [
     },
     {
       word: 'giraffe',
-      translation: 'жирафа',
+      translation: 'жираф',
       image: 'src/img/giraffe.jpg',
       audioSrc: 'audio/giraffe.mp3',
     },

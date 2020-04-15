@@ -59,9 +59,18 @@ a {
   }
 }
 
+.card_play {
+  box-shadow: 0 0 0 4px darkorange;
+}
+
 .card-body {
   background: radial-gradient(at top, #FEFFFF, #A7CECC);
   text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+}
+
+.card_body_play {
+  background: radial-gradient(circle, #e7600a, #ef7501, #f58900, #fb9d00, #ffb100);
+  color: beige;
 }
 
 .category_card_body {
@@ -129,20 +138,20 @@ a {
   text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
 }
 
-.onoffswitch2-inner:before {
+.onoffswitch2-inner:after {
   content: "TRAIN";
   font-size: 20px !important;
-  padding-left: 5px;
+  padding-left: 22px;
   background: radial-gradient(at top, #FEFFFF, #A7CECC);
   color: #212529;
 }
 
-.onoffswitch2-inner:after {
+.onoffswitch2-inner:before {
   content: "PLAY";
   font-size: 20px !important;
-  padding-right: 8px;
-  background: radial-gradient(circle, #ffae21 0%, #c6a25f 84%);
-  color: #212529;
+  padding-right: 25px;
+  background: radial-gradient(circle, #e7600a, #ef7501, #f58900, #fb9d00, #ffb100);
+  color: beige;
   text-align: right;
 }
 
@@ -314,6 +323,10 @@ input.cmn-toggle-round-flat:checked + label:after {
   }
 }
 
+.menu_play {
+  background: radial-gradient(circle, #e7600a, #ef7501, #f58900, #fb9d00, #ffb100);
+}
+
 .hamburger_menu__nav {
   position: absolute;
   display: flex;
@@ -373,12 +386,23 @@ input.cmn-toggle-round-flat:checked + label:after {
   }
 }
 
+.card_category {
+  height: 15rem;
+  overflow: hidden;
+}
+
 .categories__cards_img {
-  max-height: 10rem !important;
+  max-height: 10rem;
+  transition: all ease-out 0.3s;
 }
 
 .category_card_body {
-  height: 10px !important;
+  height: 0 !important;
+}
+
+.category_card_body button {
+  opacity: 0;
+  height: 0 !important;
 }
 
 .card-text {
@@ -413,6 +437,8 @@ input.cmn-toggle-round-flat:checked + label:after {
 }
 
 .button_play__button button {
+  display: none;
+  background: radial-gradient(circle, #e7600a, #ef7501, #f58900, #fb9d00, #ffb100);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
   font-weight: bolder;
   font-size: 23px;

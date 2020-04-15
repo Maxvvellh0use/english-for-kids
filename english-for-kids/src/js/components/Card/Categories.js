@@ -1,4 +1,5 @@
 import cards from '../../cards';
+import Switcher from '../Switcher/Switcher';
 import {
   HAMBURGER_LINKS,
   CARD_CATEGORIES,
@@ -21,14 +22,32 @@ export default class Categories {
     });
   }
 
-  appendContentsToCategory(indexCard) {
+  createContentsToCategory(indexCard, styleCard, styleImg) {
     cards[indexCard].map((elem, index) => {
       CARD_CATEGORIES[index].innerHTML = '';
-      CARD_CATEGORIES[index].insertAdjacentHTML('afterbegin', '<button class="card-body__button"><img class="svg_button" src="src/img/rotate.svg"></button>');
+      CARD_CATEGORIES[index].insertAdjacentHTML('afterbegin', `<button class="card-body__button" style="${styleCard}"><img class="svg_button" src="src/img/rotate.svg"></button>`);
       CARD_CATEGORIES[index].insertAdjacentHTML('afterbegin', `<div class="card-body category_card_body card_translate" style="display: none"><p class="card-text">${elem.translation}</p>`);
-      CARD_CATEGORIES[index].insertAdjacentHTML('afterbegin', `<div class="card-body category_card_body category_text"><p class="card-text">${elem.word}</p>`);
-      CARD_CATEGORIES[index].insertAdjacentHTML('afterbegin', `<img src="${elem.image}" class="categories__cards_img">`);
+      CARD_CATEGORIES[index].insertAdjacentHTML('afterbegin', `<div class="card-body category_card_body category_text" style="${styleCard}"><p class="card-text">${elem.word}</p>`);
+      CARD_CATEGORIES[index].insertAdjacentHTML('afterbegin', `<img src="${elem.image}" class="categories__cards_img" style="${styleImg}">`);
     });
+  }
+
+
+  appendContentsToCategory(indexCard) {
+    let styleCard = '';
+    let styleImg = '';
+    const switcher = new Switcher();
+    console.log(switcher.check()) ;
+    styleCard = 'display: block;';
+    styleImg = 'height: 13rem;';
+    if (switcher.check() === false) {
+      this.createContentsToCategory(indexCard, styleCard, styleImg);
+    }
+    else {
+      styleCard = 'display: none;';
+      styleImg = 'max-height: 15rem;';
+      this.createContentsToCategory(indexCard, styleCard, styleImg);
+    }
   }
 
   openCategoryPage(link) {
@@ -66,32 +85,31 @@ export default class Categories {
     history.pushState({ page_id: 2 }, 'Cards', 'index.html#');
   }
 
-
   linksListeners() {
-    LINKS_CATEGORIES.forEach((link) => {
+    LINKS_CATEGORIES.forEach((link, index) => {
       link.addEventListener('click', () => {
-        this.openCategoryPage(link);
-      });
-    });
-        // link.classList.remove('active_link');
-    HAMBURGER_LINKS.forEach((link) => {
-      link.classList.remove('active_link');
-      link.addEventListener('click', (event) => {
         HAMBURGER_LINKS.forEach((activeLink) => {
           activeLink.classList.remove('active_link');
         });
-        if (event.target.classList.contains('link')) {
-          link.classList.add('active_link');
-          this.openCategoryPage(link);
-        }
+        HAMBURGER_LINKS[index].classList.add('active_link');
+        this.openCategoryPage(link);
+      });
+    });
+
+    HAMBURGER_LINKS.forEach((link) => {
+      link.addEventListener('click', () => {
+        HAMBURGER_LINKS.forEach((activeLink) => {
+          activeLink.classList.remove('active_link');
+        });
+        link.classList.add('active_link');
+        this.openCategoryPage(link);
       });
     });
     this.playingWords();
   }
 
   playingWords() {
-    const cardText = document.querySelectorAll('.card-text');
-    CARD_CATEGORIES.forEach((card, index) => {
+    CARD_CATEGORIES.forEach((card) => {
       card.addEventListener('click', () => {
         const audio = new Audio(`src/audio/${card.textContent.replace(/[^A-Za-z]/g, '')}.mp3`);
         audio.play().then(() => audio.preload = 'auto');
@@ -117,20 +135,20 @@ export default class Categories {
   }
 
   rotateToTranslate(button, cardText, index, cardTranslation) {
-      cardText[index].style.display = 'none';
-      cardTranslation[index].style.display = 'block';
-      button.style.opacity = '0';
-      button.parentElement.style.transform = 'rotateY(180deg)';
-      cardTranslation[index].style.transform = 'rotateY(-180deg)';
+    cardText[index].style.display = 'none';
+    cardTranslation[index].style.display = 'block';
+    button.style.opacity = '0';
+    button.parentElement.style.transform = 'rotateY(180deg)';
+    cardTranslation[index].style.transform = 'rotateY(-180deg)';
   }
 
 
   backRotate(button, cardText, index, cardTranslation) {
-      cardText[index].style.display = 'block';
-      cardTranslation[index].style.display = 'none';
-      button.style.opacity = '1';
-      if (button.parentElement) {
-        button.parentElement.style.transform = 'rotateY(0deg)';
-      }
+    cardText[index].style.display = 'block';
+    cardTranslation[index].style.display = 'none';
+    button.style.opacity = '1';
+    if (button.parentElement) {
+      button.parentElement.style.transform = 'rotateY(0deg)';
+    }
   }
 }
