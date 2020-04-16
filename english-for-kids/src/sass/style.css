@@ -479,4 +479,17 @@ input.cmn-toggle-round-flat:checked + label:after {
   max-width: 35px;
 }
 
+.wrapper_total {
+  display: flex;
+  justify-content: center;
+}
+
+.total__win_image {
+  display: none;
+}
+
+.total__lose_image {
+  display: none;
+}
+
 /*# sourceMappingURL=style.css.map */

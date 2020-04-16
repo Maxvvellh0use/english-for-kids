@@ -21,3 +21,7 @@ export const SWITCHER = document.getElementById('myonoffswitch2');
 export const BUTTON_PLAY = document.getElementById('button_play');
 export const CARD_BODY_MAIN_PAGE = document.querySelectorAll('.card_body_main');
 export const STARS_BLOCK = document.getElementById('stars');
+
+// total:
+export const WIN_BLOCK = document.getElementById('win');
+export const LOSE_BLOCK = document.getElementById('lose');
