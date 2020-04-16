@@ -1,4 +1,4 @@
-import cards from '../../cards';
+import { cards, categoryNames } from '../../cards';
 import Switcher from '../Switcher/Switcher';
 import {
   HAMBURGER_LINKS,
@@ -8,6 +8,7 @@ import {
   CATEGORY_PAGE_CONTAINER,
   TITLE_CATEGORY,
 } from '../../constants/constants';
+
 
 export default class Categories {
   constructor() {
@@ -25,7 +26,7 @@ export default class Categories {
   createContentsToCategory(indexCard, styleImg) {
     cards[indexCard].map((elem, index) => {
       CARD_CATEGORIES[index].innerHTML = '';
-      CARD_CATEGORIES[index].insertAdjacentHTML('afterbegin', `<button class="card-body__button"><img class="svg_button" src="src/img/rotate.svg"></button>`);
+      CARD_CATEGORIES[index].insertAdjacentHTML('afterbegin', '<button class="card-body__button"><img class="svg_button" src="src/img/rotate.svg"></button>');
       CARD_CATEGORIES[index].insertAdjacentHTML('afterbegin', `<div class="card-body category_card_body card_translate" style="display: none"><p class="card-text">${elem.translation}</p>`);
       CARD_CATEGORIES[index].insertAdjacentHTML('afterbegin', `<div class="card-body category_card_body category_text"><p class="card-text">${elem.word}</p>`);
       CARD_CATEGORIES[index].insertAdjacentHTML('afterbegin', `<img src="${elem.image}" class="categories__cards_img" style="${styleImg}">`);
@@ -36,46 +37,22 @@ export default class Categories {
   appendContentsToCategory(indexCard) {
     let styleImg = '';
     const switcher = new Switcher();
-    if (switcher.check() === false) {
+    if (!switcher.check()) {
       styleImg = 'transform: scaleY(1) translateY(0px);';
       this.createContentsToCategory(indexCard, styleImg);
-    }
-    else {
+    } else {
       styleImg = 'transform: scaleY(1.5) translateY(25px)';
       this.createContentsToCategory(indexCard, styleImg);
     }
   }
 
   openCategoryPage(link) {
-    switch (link.id || link.textContent) {
-      case 'Action (set A)':
-        this.appendContentsToCategory(0);
-        break;
-      case 'Action (set B)':
-        this.appendContentsToCategory(1);
-        break;
-      case 'Animal (set A)':
-        this.appendContentsToCategory(2);
-        break;
-      case 'Animal (set B)':
-        this.appendContentsToCategory(3);
-        break;
-      case 'Clothes':
-        this.appendContentsToCategory(4);
-        break;
-      case 'Emotions':
-        this.appendContentsToCategory(5);
-        break;
-      case 'Professions':
-        this.appendContentsToCategory(6);
-        break;
-      case 'Colors':
-        this.appendContentsToCategory(7);
-        break;
-      default:
-        break;
-    }
-    TITLE_CATEGORY.innerHTML = link.textContent;
+    categoryNames.map((name, index) => {
+      if (name === link.id || name === link.innerText) {
+        this.appendContentsToCategory(index);
+      }
+    });
+    TITLE_CATEGORY.innerHTML = link.innerText;
     CATEGORY_PAGE_CONTAINER.style.display = 'block';
     MAIN_PAGE_CONTAINER.style.display = 'none';
     history.pushState({ page_id: 2 }, 'Cards', 'index.html#');
@@ -105,11 +82,14 @@ export default class Categories {
   }
 
   playingWords() {
+    const switcher = new Switcher();
     CARD_CATEGORIES.forEach((card) => {
       card.addEventListener('click', () => {
-        const audio = new Audio(`src/audio/${card.textContent.replace(/[^A-Za-z]/g, '')}.mp3`);
-        audio.play().then(() => audio.preload = 'auto');
-        this.rotateListeners(card);
+        if (!switcher.check()) {
+          const audio = new Audio(`src/audio/${card.textContent.replace(/[^A-Za-z]/g, '')}.mp3`);
+          audio.play().then(() => audio.preload = 'auto');
+          this.rotateListeners(card);
+        }
       });
     });
   }

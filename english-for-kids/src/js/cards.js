@@ -1,3 +1,7 @@
+export const categoryNames = ['Action (set A)', 'Action (set B)', 'Animal (set A)', 'Animal (set B)', 'Clothes',
+  'Emotions', 'Professions', 'Colors'];
+
+
 export const cards = [
   [
     {

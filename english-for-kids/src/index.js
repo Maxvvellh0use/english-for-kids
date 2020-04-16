@@ -2,6 +2,7 @@ import './sass/style.scss';
 import HamburgerMenu from './js/components/Header/HamburgerMenu.js';
 import Categories from './js/components/Card/Categories.js';
 import Switcher from './js/components/Switcher/Switcher.js';
+import PlayMode from "./js/components/PlayMode/PlayMode";
 import { HAMBURGER, BLACKOUT, HAMBURGER_LIST } from './js/constants/constants';
 
 const hamburger = new HamburgerMenu();
@@ -16,3 +17,6 @@ categories.openMainPage();
 
 const switcher = new Switcher();
 switcher.playMode();
+
+const playMode = new PlayMode();
+playMode.buttonStartPlay();

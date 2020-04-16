@@ -12,6 +12,11 @@
   height: 30px;
 }
 
+.repeat {
+  width: calc(8vw + 8px) !important;
+}
+
+
 .button_play {
   display: flex;
   justify-content: center;
@@ -25,4 +30,10 @@
   font-weight: bolder;
   font-size: 23px;
   width: calc(33vw + 8px);
+  transition: all ease-out .3s;
+}
+
+.svg_repeat {
+  width: 25px;
+  margin-bottom: 5px;
 }

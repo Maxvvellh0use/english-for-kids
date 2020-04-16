@@ -20,5 +20,4 @@ export const TITLE_CATEGORY = document.getElementById('header_title');
 export const SWITCHER = document.getElementById('myonoffswitch2');
 export const BUTTON_PLAY = document.getElementById('button_play');
 export const CARD_BODY_MAIN_PAGE = document.querySelectorAll('.card_body_main');
-export const CARD_CATEGORY_IMAGE = document.querySelectorAll('.categories__cards_img');
-export const CARD_CATEGORY_BUTTON = document.querySelectorAll('.card-body__button');
+export const STARS_BLOCK = document.getElementById('stars');

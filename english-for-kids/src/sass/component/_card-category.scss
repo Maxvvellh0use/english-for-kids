@@ -6,7 +6,6 @@
 }
 
 .card {
-  cursor: pointer;
   max-width: 18rem;
   max-height: 18rem;
   margin: 10px;
@@ -54,8 +53,20 @@
   max-height: 10rem;
 }
 
-.card:hover {
+.card_main:hover {
+  cursor: pointer;
   box-shadow: 0px 0px 10px $color-text-card;
+}
+
+
+
+.card_to_hover:hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 10px $color-text-card;
+}
+
+.card_correct {
+  opacity: .7;
 }
 
 
