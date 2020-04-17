@@ -1,6 +1,15 @@
 import {
   // eslint-disable-next-line import/named
-  BUTTON_PLAY, CARD_CATEGORIES, TITLE_CATEGORY, STARS_BLOCK, CATEGORY_PAGE_CONTAINER, WIN_BLOCK, LOSE_BLOCK, HEADER, ERRORS,
+  BUTTON_PLAY,
+  CARD_CATEGORIES,
+  TITLE_CATEGORY,
+  STARS_BLOCK,
+  CATEGORY_PAGE_CONTAINER,
+  WIN_BLOCK,
+  LOSE_BLOCK,
+  HEADER,
+  ERRORS,
+  HAMBURGER_LINKS,
 } from '../../constants/constants';
 import { categoryNames, cards } from '../../cards';
 import Switcher from '../Switcher/Switcher';
@@ -17,20 +26,26 @@ export default class PlayMode {
   }
 
   clearStorage() {
-    window.addEventListener('popstate', () => {
-      BUTTON_PLAY.innerHTML = 'START PLAY';
-      BUTTON_PLAY.classList.remove('repeat');
-      STARS_BLOCK.innerHTML = '';
-      STARS_BLOCK.style.display = 'none';
-      this.nameAudio = [];
-      this.clickPlay = 0;
-      CARD_CATEGORIES.forEach((card) => {
-        card.classList.remove('card_correct');
-        card.classList.add('card_to_hover');
-      });
+    BUTTON_PLAY.innerHTML = 'START PLAY';
+    BUTTON_PLAY.classList.remove('repeat');
+    STARS_BLOCK.innerHTML = '';
+    STARS_BLOCK.style.display = 'none';
+    this.nameAudio = [];
+    this.clickPlay = 0;
+    CARD_CATEGORIES.forEach((card) => {
+      card.classList.remove('card_correct');
+      card.classList.add('card_to_hover');
     });
   }
 
+  burgerLinkNavigation() {
+    HAMBURGER_LINKS.forEach((link) => {
+      link.addEventListener('click', () => {
+       this.clearStorage();
+        STARS_BLOCK.innerHTML = '';
+      })
+    });
+  }
 
   sortWords() {
     if (this.clickPlay === 0) {
@@ -56,7 +71,7 @@ export default class PlayMode {
       const audio = new Audio(`src/audio/${trueCard}.mp3`);
       audio.play().then(() => audio.preload = 'auto');
     }
-    this.clearStorage();
+    this.burgerLinkNavigation()
   }
 
 
