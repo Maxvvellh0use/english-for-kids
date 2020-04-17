@@ -13,7 +13,7 @@ HAMBURGER_LIST.addEventListener('click', (event) => hamburger.closeAfterClickToL
 
 const categories = new Categories();
 categories.linksListeners();
-categories.openMainPage();
+categories.backMainPage();
 
 const switcher = new Switcher();
 switcher.playMode();

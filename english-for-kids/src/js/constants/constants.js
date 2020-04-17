@@ -1,4 +1,5 @@
 // mainPage:
+export const HEADER = document.getElementById('header');
 export const MAIN_PAGE_CONTAINER = document.getElementById('main_page');
 export const LINKS_CATEGORIES = document.querySelectorAll('.card_main');
 
@@ -25,3 +26,4 @@ export const STARS_BLOCK = document.getElementById('stars');
 // total:
 export const WIN_BLOCK = document.getElementById('win');
 export const LOSE_BLOCK = document.getElementById('lose');
+export const ERRORS = document.getElementById('errors');

@@ -8,18 +8,24 @@ import {
   CATEGORY_PAGE_CONTAINER,
   TITLE_CATEGORY,
 } from '../../constants/constants';
+import PlayMode from '../PlayMode/PlayMode';
 
 
 export default class Categories {
   constructor() {
+    this.openMainPage = this.openMainPage.bind(this);
     this.linksListeners = this.linksListeners.bind(this);
   }
 
   openMainPage() {
+    CATEGORY_PAGE_CONTAINER.style.display = 'none';
+    MAIN_PAGE_CONTAINER.style.display = 'block';
+    TITLE_CATEGORY.innerHTML = '';
+  }
+
+  backMainPage() {
     window.addEventListener('popstate', () => {
-      CATEGORY_PAGE_CONTAINER.style.display = 'none';
-      MAIN_PAGE_CONTAINER.style.display = 'block';
-      TITLE_CATEGORY.innerHTML = '';
+      location.reload();
     });
   }
 
