@@ -130,7 +130,6 @@ export default class PlayMode {
   errorCard() {
     const audioError = new Audio('src/audio/error.mp3');
     audioError.play().then(() => audioError.preload = 'auto');
-    // BUTTON_PLAY.style.marginTop = '0';
     STARS_BLOCK.insertAdjacentHTML('beforeend', '<img class="stars_svg star_lose" src="src/img/star.svg">');
     STARS_BLOCK.style.display = 'block';
   }
@@ -146,22 +145,24 @@ export default class PlayMode {
     const starErrors = document.querySelectorAll('.star_lose');
     const audioSuccess = new Audio('src/audio/success.mp3');
     const audioFailure = new Audio('src/audio/failure.mp3');
+    const starsTotalArray = Array.from(starsTotal);
     CATEGORY_PAGE_CONTAINER.style.display = 'none';
-    starsTotal.forEach((star) => {
-      if (star.classList.contains('star_lose')) {
-        audioFailure.play().then(() => audioFailure.preload = 'auto');
-        WIN_BLOCK.style.display = 'none';
-        LOSE_BLOCK.style.display = 'block';
-        HEADER.style.display = 'none';
-        ERRORS.innerHTML = `${starErrors.length} errors`;
-        setTimeout(this.backToMainPage, 3400);
-      } else {
-        audioSuccess.play().then(() => audioSuccess.preload = 'auto');
-        WIN_BLOCK.style.display = 'block';
-        HEADER.style.display = 'none';
-        setTimeout(this.backToMainPage, 3400);
-      }
-    });
+    const filterStarsTotalArray = starsTotalArray.filter((star) => star.classList.contains('star_lose'));
+    console.log(filterStarsTotalArray);
+    if (filterStarsTotalArray.length) {
+      audioFailure.play().then(() => audioFailure.preload = 'auto');
+      WIN_BLOCK.style.display = 'none';
+      LOSE_BLOCK.style.display = 'block';
+      HEADER.style.display = 'none';
+      ERRORS.innerHTML = `${starErrors.length} errors`;
+      setTimeout(this.backToMainPage, 3400);
+    }
+    else {
+      audioSuccess.play().then(() => audioSuccess.preload = 'auto');
+      WIN_BLOCK.style.display = 'block';
+      HEADER.style.display = 'none';
+      setTimeout(this.backToMainPage, 3400);
+    }
   }
 
   backToMainPage() {
