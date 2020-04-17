@@ -1,7 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 
@@ -55,5 +53,10 @@ module.exports = {
             template: './english-for-kids/index.html',
             filename: 'index.html'
         }),
-    ]
+    ],
+    devServer: {
+        contentBase: path.join(__dirname, 'dist'),
+        compress: true,
+        port: 8080
+    },
 };
