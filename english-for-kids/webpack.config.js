@@ -45,8 +45,8 @@ module.exports = {
       { filename: 'src/sass/style.css', disable: false, allChunks: true },
     ),
     new CopyPlugin([
-      { from: 'src/audio', to: 'audio' },
-      { from: 'src/img', to: 'img' },
+      { from: 'src/audio', to: 'src/audio' },
+      { from: 'src/img', to: 'src/img' },
     ]),
     new HtmlWebpackPlugin({
       inject: false,

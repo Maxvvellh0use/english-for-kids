@@ -495,4 +495,8 @@ input.cmn-toggle-round-flat:checked + label:after {
   margin-top: 8vw;
 }
 
+.score__table {
+  display: none;
+}
+
 /*# sourceMappingURL=style.css.map */
