@@ -27,8 +27,7 @@ export default class Switcher {
           cardMain.classList.add('card_body_play');
           cardMain.parentElement.classList.add('card_play');
         });
-      }
-      else {
+      } else {
         cardCategoryImages.forEach((image) => {
           image.style.transform = 'scaleY(1)' + 'translateY(0px)';
         });

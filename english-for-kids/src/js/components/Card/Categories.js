@@ -8,8 +8,6 @@ import {
   CATEGORY_PAGE_CONTAINER,
   TITLE_CATEGORY,
 } from '../../constants/constants';
-import PlayMode from '../PlayMode/PlayMode';
-
 
 export default class Categories {
   constructor() {

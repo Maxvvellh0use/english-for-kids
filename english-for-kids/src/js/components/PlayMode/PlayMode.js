@@ -4,7 +4,6 @@ import {
 } from '../../constants/constants';
 import { categoryNames, cards } from '../../cards';
 import Switcher from '../Switcher/Switcher';
-import Categories from '../Card/Categories';
 
 export default class PlayMode {
   constructor() {
@@ -19,13 +18,11 @@ export default class PlayMode {
 
   clearStorage() {
     window.addEventListener('popstate', () => {
-      console.log('CLEAR');
       BUTTON_PLAY.innerHTML = 'START PLAY';
       BUTTON_PLAY.classList.remove('repeat');
       STARS_BLOCK.innerHTML = '';
       STARS_BLOCK.style.display = 'none';
       this.nameAudio = [];
-      console.log(this.nameAudio);
       this.clickPlay = 0;
       CARD_CATEGORIES.forEach((card) => {
         card.classList.remove('card_correct');
@@ -37,7 +34,6 @@ export default class PlayMode {
 
   sortWords() {
     if (this.clickPlay === 0) {
-      console.log(this.nameAudio);
       categoryNames.map((name, index) => {
         if (name === TITLE_CATEGORY.innerText) {
           this.nameAudio = [];
@@ -61,7 +57,6 @@ export default class PlayMode {
       audio.play().then(() => audio.preload = 'auto');
     }
     this.clearStorage();
-    console.log(this.nameAudio[this.nameAudio.length - 1]);
   }
 
 
@@ -88,13 +83,10 @@ export default class PlayMode {
 
   cardsCLickPlay() {
     CARD_CATEGORIES.forEach((card) => {
-      console.log(card);
       card.addEventListener('click', (event) => {
         event.preventDefault();
-        console.log(this.nameAudio);
         const trueCard = this.nameAudio[this.nameAudio.length - 1];
         if (this.nameAudio.length === 1) {
-          console.log('пусто!');
           this.openTotalPage();
         } else if (this.nameAudio.length && this.switcherChecked() && card.classList.contains('card_to_hover') && trueCard === card.innerText) {
           this.correctCard(card);
