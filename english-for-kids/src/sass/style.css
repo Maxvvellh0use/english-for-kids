@@ -9915,6 +9915,10 @@ a {
   display: block;
 }
 
+.overflow-hidden {
+  overflow: hidden;
+}
+
 .categories__cards {
   display: flex;
   flex-wrap: wrap;

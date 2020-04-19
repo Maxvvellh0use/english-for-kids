@@ -21,6 +21,7 @@ export default class HamburgerMenu {
       const promise = new Promise(() => {
         HAMBURGER_NAV.style.display = 'block';
         BLACKOUT.style.display = 'block';
+        document.body.style.overflow = 'hidden';
       });
       setTimeout(() => {
         HAMBURGER_NAV.style.transform = 'translateX(0vw)';
@@ -52,6 +53,7 @@ export default class HamburgerMenu {
     HAMBURGER_LIST.style.transform = 'translateX(-75vw)';
     HAMBURGER.style.transform = 'rotate(0deg)';
     BLACKOUT.style.display = 'none';
+    document.body.style.overflow = 'visible';
     this.transformBurger();
     clicksHamburger = 0;
   }
