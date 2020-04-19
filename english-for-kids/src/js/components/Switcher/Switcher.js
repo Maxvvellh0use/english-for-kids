@@ -2,7 +2,6 @@ import {
   // eslint-disable-next-line import/named
   SWITCHER, BUTTON_PLAY, CARD_BODY_MAIN_PAGE, HAMBURGER_NAV, STARS_BLOCK,
 } from '../../constants/constants';
-import PlayMode from "../PlayMode/PlayMode";
 
 export default class Switcher {
   constructor() {
@@ -20,7 +19,7 @@ export default class Switcher {
       if (this.switcherIsChecked()) {
         this.switcherChecked(cardCategoryImages);
       } else {
-       this.switcherNotChecked(cardCategoryImages);
+        this.switcherNotChecked(cardCategoryImages);
       }
     });
   }

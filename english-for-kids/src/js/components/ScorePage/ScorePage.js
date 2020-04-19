@@ -1,4 +1,6 @@
-import { SCORE_ITEMS, SCORE_TABLE, SCORE_LINK, CATEGORY_PAGE_CONTAINER } from '../../constants/constants';
+import {
+  SCORE_TABLE, SCORE_LINK, CATEGORY_PAGE_CONTAINER,
+} from '../../constants/constants';
 import { cards, categoryNames } from '../../cards';
 
 export default class ScorePage {
@@ -19,8 +21,8 @@ export default class ScorePage {
   createTextInWordLine() {
     categoryNames.map((name, index) => {
       cards[index].map((card) => {
-        const {word} = card;
-        const {translation} = card;
+        const { word } = card;
+        const { translation } = card;
         this.createWordLine(word, name, translation);
       });
     });
@@ -32,6 +34,6 @@ export default class ScorePage {
       SCORE_TABLE.classList.add('flex');
       CATEGORY_PAGE_CONTAINER.style.display = 'none';
       this.createTextInWordLine();
-    })
+    });
   }
 }

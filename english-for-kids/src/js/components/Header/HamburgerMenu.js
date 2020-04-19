@@ -58,10 +58,6 @@ export default class HamburgerMenu {
     clicksHamburger = 0;
   }
 
-  isHamburgerMenu() {
-    document.addEventListener('click', (event) => event.target === HAMBURGER_LIST || event.target === HAMBURGER_NAV);
-  }
-
   closeAfterClickToLinks(event) {
     HAMBURGER_LINKS.forEach((link) => {
       if (event.target === link) {
