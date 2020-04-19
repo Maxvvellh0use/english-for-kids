@@ -7,6 +7,7 @@ import {
   MAIN_PAGE_CONTAINER,
   CATEGORY_PAGE_CONTAINER,
   TITLE_CATEGORY,
+  SCORE_TABLE,
 } from '../../constants/constants';
 
 export default class Categories {
@@ -56,6 +57,8 @@ export default class Categories {
         this.appendContentsToCategory(index);
       }
     });
+    SCORE_TABLE.classList.add('hidden');
+    SCORE_TABLE.classList.remove('flex');
     TITLE_CATEGORY.innerHTML = link.innerText;
     CATEGORY_PAGE_CONTAINER.style.display = 'block';
     MAIN_PAGE_CONTAINER.style.display = 'none';
