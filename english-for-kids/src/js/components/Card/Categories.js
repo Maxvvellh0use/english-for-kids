@@ -30,7 +30,7 @@ export default class Categories {
   createContentsToCategory(indexCard, styleImg) {
     cards[indexCard].map((elem, index) => {
       CARD_CATEGORIES[index].innerHTML = '';
-      CARD_CATEGORIES[index].insertAdjacentHTML('afterbegin', '<button class="card-body__button"><img class="svg_button" src="src/img/rotate.svg"></button>');
+      CARD_CATEGORIES[index].insertAdjacentHTML('afterbegin', '<button class="card-body__button"><img class="svg_button" src="src/img/other/rotate.svg"></button>');
       CARD_CATEGORIES[index].insertAdjacentHTML('afterbegin', `<div class="card-body category_card_body card_translate" style="display: none"><p class="card-text">${elem.translation}</p>`);
       CARD_CATEGORIES[index].insertAdjacentHTML('afterbegin', `<div class="card-body category_card_body category_text"><p class="card-text">${elem.word}</p>`);
       CARD_CATEGORIES[index].insertAdjacentHTML('afterbegin', `<img src="${elem.image}" class="categories__cards_img" style="${styleImg}">`);

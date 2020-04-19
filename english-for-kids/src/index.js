@@ -1,9 +1,11 @@
+import './sass/style.scss';
+
 import HamburgerMenu from './js/components/Header/HamburgerMenu.js';
 import Categories from './js/components/Card/Categories.js';
 import Switcher from './js/components/Switcher/Switcher.js';
 import PlayMode from './js/components/PlayMode/PlayMode';
 import { HAMBURGER, BLACKOUT, HAMBURGER_LIST } from './js/constants/constants';
-import ScorePage from "./js/components/ScorePage/ScorePage.js";
+import ScorePage from './js/components/ScorePage/ScorePage.js';
 
 const hamburger = new HamburgerMenu();
 HAMBURGER.addEventListener('click', hamburger.openHamburgerMenu);
@@ -22,4 +24,4 @@ const playMode = new PlayMode();
 playMode.buttonStartPlay();
 
 const scorePage = new ScorePage();
-scorePage.createTextInWordLine();
+scorePage.openScorePage();

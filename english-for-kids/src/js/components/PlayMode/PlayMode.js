@@ -23,7 +23,7 @@ export default class PlayMode {
   }
 
   addSvgRepeat() {
-    BUTTON_PLAY.insertAdjacentHTML('afterbegin', '<img class="svg_repeat" src="src/img/repeat.svg">');
+    BUTTON_PLAY.insertAdjacentHTML('afterbegin', '<img class="svg_repeat" src="src/img/other/repeat.svg">');
   }
 
   clearStorage() {
@@ -121,7 +121,7 @@ export default class PlayMode {
     const nextWord = this.nameAudio[this.nameAudio.length - 1];
     const audioNext = new Audio(`src/audio/${nextWord}.mp3`);
     audioNext.play().then(() => audioNext.preload = 'auto');
-    STARS_BLOCK.insertAdjacentHTML('afterbegin', '<img class="stars_svg" src="src/img/star-win.svg">');
+    STARS_BLOCK.insertAdjacentHTML('afterbegin', '<img class="stars_svg" src="src/img/other/star-win.svg">');
     STARS_BLOCK.style.display = 'block';
     card.classList.remove('card_to_hover');
     card.classList.add('card_correct');
@@ -130,7 +130,7 @@ export default class PlayMode {
   errorCard() {
     const audioError = new Audio('src/audio/error.mp3');
     audioError.play().then(() => audioError.preload = 'auto');
-    STARS_BLOCK.insertAdjacentHTML('beforeend', '<img class="stars_svg star_lose" src="src/img/star.svg">');
+    STARS_BLOCK.insertAdjacentHTML('beforeend', '<img class="stars_svg star_lose" src="src/img/other/star.svg">');
     STARS_BLOCK.style.display = 'block';
   }
 

@@ -10387,17 +10387,24 @@ input.cmn-toggle-round-flat:checked + label:after {
 .score__table {
   justify-content: space-between;
   width: 100%;
-  display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
 .score__item {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-wrap: normal;
   text-align: center;
   flex: 0 0 14%;
-  border: 2px solid black;
-  margin: 0;
+  border: 1px solid black;
+  margin: 3px 0;
   padding: 0;
+}
+@media (max-width: 767px) {
+  .score__item {
+    font-size: 10px;
+  }
 }
 
 .score_wrapper {

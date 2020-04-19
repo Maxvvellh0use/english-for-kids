@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>english for kids</title>
     <link rel="shortcut icon" href="#" />
-    <link rel="stylesheet" href="src/sass/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
@@ -25,7 +24,7 @@
                             <li class="hamburger_menu__list__item"><a class="link">Emotions</a></li>
                             <li class="hamburger_menu__list__item"><a class="link">Professions</a></li>
                             <li class="hamburger_menu__list__item"><a class="link">Colors</a></li><br><br>
-                            <li class="hamburger_menu__list__item" id="score_link"><a class="link">Score</a></li>
+                            <li class="hamburger_menu__list__item" id="score_link"><a class="link" id="scoreLink">Score</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -182,7 +181,7 @@
             </section>
             <section class="score">
                 <div class="wrapper score_wrapper">
-                    <div class="score__table" id="scoreTable">
+                    <div class="score__table hidden" id="scoreTable">
                         <div class="score__item header_item">Words</div>
                         <div class="score__item header_item">Categories</div>
                         <div class="score__item header_item">Translation</div>

@@ -29,5 +29,6 @@ export const LOSE_BLOCK = document.getElementById('lose');
 export const ERRORS = document.getElementById('errors');
 
 // scorePage
+export const SCORE_LINK = document.getElementById('scoreLink');
 export const SCORE_TABLE = document.getElementById('scoreTable');
 export const SCORE_ITEMS = document.querySelectorAll('.score__item');
