@@ -49,7 +49,7 @@ module.exports = {
       { from: 'src/img', to: 'src/img' },
     ]),
     new HtmlWebpackPlugin({
-      inject: false,
+      inject: true,
       hash: true,
       template: './index.html',
       filename: 'index.html',

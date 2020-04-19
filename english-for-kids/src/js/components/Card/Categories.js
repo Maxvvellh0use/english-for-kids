@@ -16,7 +16,7 @@ export default class Categories {
   }
 
   openMainPage() {
-    CATEGORY_PAGE_CONTAINER.style.display = 'none';
+    CATEGORY_PAGE_CONTAINER.classList.add('hidden');
     MAIN_PAGE_CONTAINER.style.display = 'block';
     TITLE_CATEGORY.innerHTML = '';
   }
@@ -41,7 +41,7 @@ export default class Categories {
   appendContentsToCategory(indexCard) {
     let styleImg = '';
     const switcher = new Switcher();
-    if (!switcher.check()) {
+    if (!switcher.switcherIsChecked()) {
       styleImg = 'transform: scaleY(1) translateY(0px);';
       this.createContentsToCategory(indexCard, styleImg);
     } else {
@@ -89,7 +89,7 @@ export default class Categories {
     const switcher = new Switcher();
     CARD_CATEGORIES.forEach((card) => {
       card.addEventListener('click', () => {
-        if (!switcher.check()) {
+        if (!switcher.switcherIsChecked()) {
           const audio = new Audio(`src/audio/${card.textContent.replace(/[^A-Za-z]/g, '')}.mp3`);
           audio.play().then(() => audio.preload = 'auto');
           this.rotateListeners(card);

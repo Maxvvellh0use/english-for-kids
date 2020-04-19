@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "start: dev": "node_modules/.bin/webpack-dev-server",
-    "style": "node_modules/.bin/sass --watch english-for-kids/src/sass/style.scss dist/src/sass/style.css",
+    "style": "node_modules/.bin/sass --watch src/sass/style.scss src/sass/style.css",
     "build": "node_modules/.bin/webpack -w",
     "dev": "node_modules/.bin/webpack -w --mode development",
-    "prod": "../node_modules/.bin/webpack --mode production",
-    "esw": "../node_modules/.bin/esw --watch english-for-kids/src/js",
+    "prod": "node_modules/.bin/webpack --mode production",
+    "esw": "node_modules/.bin/esw --watch english-for-kids/src/js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "http-server -c-1 -p 8081"
   },

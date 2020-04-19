@@ -12,6 +12,7 @@ import {
   HAMBURGER_LINKS,
 } from '../../constants/constants';
 import { categoryNames, cards } from '../../cards';
+// eslint-disable-next-line import/no-cycle
 import Switcher from '../Switcher/Switcher';
 
 export default class PlayMode {
@@ -41,9 +42,9 @@ export default class PlayMode {
   burgerLinkNavigation() {
     HAMBURGER_LINKS.forEach((link) => {
       link.addEventListener('click', () => {
-       this.clearStorage();
+        this.clearStorage();
         STARS_BLOCK.innerHTML = '';
-      })
+      });
     });
   }
 
@@ -71,7 +72,7 @@ export default class PlayMode {
       const audio = new Audio(`src/audio/${trueCard}.mp3`);
       audio.play().then(() => audio.preload = 'auto');
     }
-    this.burgerLinkNavigation()
+    this.burgerLinkNavigation();
   }
 
 
@@ -122,7 +123,6 @@ export default class PlayMode {
     audioNext.play().then(() => audioNext.preload = 'auto');
     STARS_BLOCK.insertAdjacentHTML('afterbegin', '<img class="stars_svg" src="src/img/star-win.svg">');
     STARS_BLOCK.style.display = 'block';
-    // BUTTON_PLAY.style.marginTop = '0';
     card.classList.remove('card_to_hover');
     card.classList.add('card_correct');
   }
@@ -136,7 +136,7 @@ export default class PlayMode {
 
   switcherChecked() {
     const switcher = new Switcher();
-    return switcher.check();
+    return switcher.switcherIsChecked();
   }
 
 
@@ -148,7 +148,6 @@ export default class PlayMode {
     const starsTotalArray = Array.from(starsTotal);
     CATEGORY_PAGE_CONTAINER.style.display = 'none';
     const filterStarsTotalArray = starsTotalArray.filter((star) => star.classList.contains('star_lose'));
-    console.log(filterStarsTotalArray);
     if (filterStarsTotalArray.length) {
       audioFailure.play().then(() => audioFailure.preload = 'auto');
       WIN_BLOCK.style.display = 'none';
@@ -156,8 +155,7 @@ export default class PlayMode {
       HEADER.style.display = 'none';
       ERRORS.innerHTML = `${starErrors.length} errors`;
       setTimeout(this.backToMainPage, 3400);
-    }
-    else {
+    } else {
       audioSuccess.play().then(() => audioSuccess.preload = 'auto');
       WIN_BLOCK.style.display = 'block';
       HEADER.style.display = 'none';

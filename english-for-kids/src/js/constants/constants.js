@@ -23,7 +23,11 @@ export const BUTTON_PLAY = document.getElementById('button_play');
 export const CARD_BODY_MAIN_PAGE = document.querySelectorAll('.card_body_main');
 export const STARS_BLOCK = document.getElementById('stars');
 
-// total:
+// totalPage:
 export const WIN_BLOCK = document.getElementById('win');
 export const LOSE_BLOCK = document.getElementById('lose');
 export const ERRORS = document.getElementById('errors');
+
+// scorePage
+export const SCORE_TABLE = document.getElementById('scoreTable');
+export const SCORE_ITEMS = document.querySelectorAll('.score__item');

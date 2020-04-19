@@ -7,17 +7,17 @@ import PlayMode from "../PlayMode/PlayMode";
 export default class Switcher {
   constructor() {
     this.playMode = this.playMode.bind(this);
-    this.check = this.check.bind(this);
+    this.switcherIsChecked = this.switcherIsChecked.bind(this);
   }
 
-  check() {
+  switcherIsChecked() {
     return SWITCHER.checked === true;
   }
 
   playMode() {
     SWITCHER.addEventListener('change', () => {
       const cardCategoryImages = document.querySelectorAll('.categories__cards_img');
-      if (this.check()) {
+      if (this.switcherIsChecked()) {
         this.switcherChecked(cardCategoryImages);
       } else {
        this.switcherNotChecked(cardCategoryImages);
