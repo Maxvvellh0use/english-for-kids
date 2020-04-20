@@ -102,16 +102,17 @@ export default class PlayMode {
     CARD_CATEGORIES.forEach((card) => {
       card.addEventListener('click', (event) => {
         event.preventDefault();
+        const cardText = card.textContent.replace(/[^A-Za-z]/g, '');
         const trueCard = this.nameAudio[this.nameAudio.length - 1];
         const categories = new Categories();
         if (this.nameAudio.length === 1) {
           this.openTotalPage();
         } else if (this.nameAudio.length && this.switcherChecked() && card.classList.contains('card_to_hover') && trueCard === card.innerText) {
           this.correctCard(card);
-          categories.localStorageAdd(trueCard, 0, 0, 1);
+          categories.localStorageAdd(cardText, 0, 0, 1);
         } else if (trueCard !== card.innerText && this.nameAudio.length && this.switcherChecked() && card.classList.contains('card_to_hover')) {
           this.errorCard();
-          categories.localStorageAdd(trueCard, 0, 1, 0);
+          categories.localStorageAdd(cardText, 0, 1, 0);
         }
       });
     });
