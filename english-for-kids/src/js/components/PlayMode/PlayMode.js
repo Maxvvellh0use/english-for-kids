@@ -14,6 +14,7 @@ import {
 import { categoryNames, cards } from '../../cards';
 // eslint-disable-next-line import/no-cycle
 import Switcher from '../Switcher/Switcher';
+import Categories from '../Card/Categories';
 
 export default class PlayMode {
   constructor() {
@@ -102,12 +103,15 @@ export default class PlayMode {
       card.addEventListener('click', (event) => {
         event.preventDefault();
         const trueCard = this.nameAudio[this.nameAudio.length - 1];
+        const categories = new Categories();
         if (this.nameAudio.length === 1) {
           this.openTotalPage();
         } else if (this.nameAudio.length && this.switcherChecked() && card.classList.contains('card_to_hover') && trueCard === card.innerText) {
           this.correctCard(card);
+          categories.localStorageAdd(trueCard, 0, 0, 1);
         } else if (trueCard !== card.innerText && this.nameAudio.length && this.switcherChecked() && card.classList.contains('card_to_hover')) {
           this.errorCard();
+          categories.localStorageAdd(trueCard, 0, 1, 0);
         }
       });
     });

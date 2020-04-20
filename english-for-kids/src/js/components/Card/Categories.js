@@ -88,14 +88,29 @@ export default class Categories {
     this.playingWords();
   }
 
+  localStorageAdd(word, train, correct, error) {
+    if (localStorage.getItem(word)) {
+      const score = JSON.parse(localStorage.getItem(word));
+      score[0] += train;
+      score[1] += correct;
+      score[2] += error;
+      localStorage.setItem(word, JSON.stringify(score));
+    } else {
+      const score = [train, correct, error];
+      localStorage.setItem(word, JSON.stringify(score));
+    }
+  }
+
   playingWords() {
     const switcher = new Switcher();
     CARD_CATEGORIES.forEach((card) => {
       card.addEventListener('click', () => {
         if (!switcher.switcherIsChecked()) {
-          const audio = new Audio(`src/audio/${card.textContent.replace(/[^A-Za-z]/g, '')}.mp3`);
+          const word = card.textContent.replace(/[^A-Za-z]/g, '');
+          const audio = new Audio(`src/audio/${word}.mp3`);
           audio.play().then(() => audio.preload = 'auto');
           this.rotateListeners(card);
+          this.localStorageAdd(word, 1, 0, 0);
         }
       });
     });

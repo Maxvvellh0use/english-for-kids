@@ -9,12 +9,24 @@ export default class ScorePage {
   }
 
   createWordLine(word, name, translation) {
+    let train = '';
+    let correct = '';
+    let error = '';
+    if (!localStorage.getItem(word)) {
+      train = [0, 0, 0];
+      correct = [0, 0, 0];
+      error = [0, 0, 0];
+    } else {
+      train = JSON.parse(localStorage.getItem(word));
+      correct = JSON.parse(localStorage.getItem(word));
+      error = JSON.parse(localStorage.getItem(word));
+    }
     SCORE_TABLE.insertAdjacentHTML('beforeend', `<div class="score__item header_item word">${word}</div>\n
                                         <div class="score__item header_item word_categories">${name}</div>\n
                                         <div class="score__item">${translation}</div>\n
-                                        <div class="score__item">0</div>\n
-                                        <div class="score__item">0</div>\n
-                                        <div class="score__item">0</div>\n
+                                        <div class="score__item">${train[0]}</div>\n
+                                        <div class="score__item">${correct[1]}</div>\n
+                                        <div class="score__item">${error[2]}</div>\n
                                         <div class="score__item">0</div>`);
   }
 
@@ -28,7 +40,7 @@ export default class ScorePage {
     });
   }
 
-  openScorePage() {
+  openScorePage(word) {
     SCORE_LINK.addEventListener('click', () => {
       SCORE_TABLE.classList.remove('hidden');
       SCORE_TABLE.classList.add('flex');
