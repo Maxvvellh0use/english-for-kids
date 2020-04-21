@@ -16,6 +16,7 @@
                 <div class="hamburger_menu__nav" id="hamburger_list">
                     <nav>
                         <ul class="hamburger_menu__list" id="hamburger_menu__list">
+                            <li class="hamburger_menu__list__item" id="main_page_link"><a class="links">Main Page</a></li>
                             <li class="hamburger_menu__list__item"><a class="link">Action (set A)</a></li>
                             <li class="hamburger_menu__list__item"><a class="link">Action (set B)</a></li>
                             <li class="hamburger_menu__list__item"><a class="link">Animal (set A)</a></li>
@@ -181,14 +182,17 @@
             </section>
             <section class="score">
                 <div class="wrapper score_wrapper">
+                    <h2 class="title_score hidden">fdsf</h2>
                     <div class="score__table hidden" id="scoreTable">
-                        <div class="score__item header_item">Words</div>
+                        <div class="score__item header_item"><button class="words" type="button">Words</button></div>
                         <div class="score__item header_item">Categories</div>
-                        <div class="score__item header_item">Translation</div>
-                        <div class="score__item header_item">Train Mode</div>
-                        <div class="score__item header_item">Correct</div>
-                        <div class="score__item header_item">Error</div>
-                        <div class="score__item header_item">Percent</div>
+                        <div class="score__item header_item"><button class="translation" type="button">Translation</button></div>
+                        <div class="score__item header_item"><button class="train" type="button">Train Mode</button></div>
+                        <div class="score__item header_item"><button class="correct" type="button">Correct</button></div>
+                        <div class="score__item header_item"><button class="error" type="button">Error</button></div>
+                        <div class="score__item header_item"><button class="rates" type="button">Error rates</button></div>
+                    </div>
+                    <div class="score__table hidden" id="scoreItems">
                     </div>
                 </div>
             </section>

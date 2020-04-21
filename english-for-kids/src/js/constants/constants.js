@@ -2,6 +2,7 @@
 export const HEADER = document.getElementById('header');
 export const MAIN_PAGE_CONTAINER = document.getElementById('main_page');
 export const LINKS_CATEGORIES = document.querySelectorAll('.card_main');
+export const MAIN_PAGE = document.getElementById('main_page_link');
 
 // hamburger:
 export const HAMBURGER = document.getElementById('hamburger');
@@ -30,4 +31,4 @@ export const ERRORS = document.getElementById('errors');
 // scorePage
 export const SCORE_LINK = document.getElementById('scoreLink');
 export const SCORE_TABLE = document.getElementById('scoreTable');
-export const SCORE_ITEMS = document.querySelectorAll('.score__item');
+export const SCORE_ITEMS = document.getElementById('scoreItems');

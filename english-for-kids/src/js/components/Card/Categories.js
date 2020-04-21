@@ -8,6 +8,8 @@ import {
   CATEGORY_PAGE_CONTAINER,
   TITLE_CATEGORY,
   SCORE_TABLE,
+  SCORE_ITEMS,
+  MAIN_PAGE,
 } from '../../constants/constants';
 
 export default class Categories {
@@ -26,6 +28,9 @@ export default class Categories {
     window.addEventListener('popstate', () => {
       location.reload();
     });
+    MAIN_PAGE.addEventListener('click', () => {
+      location.reload();
+    })
   }
 
   createContentsToCategory(indexCard, styleImg) {
@@ -57,6 +62,8 @@ export default class Categories {
         this.appendContentsToCategory(index);
       }
     });
+    SCORE_ITEMS.classList.add('hidden');
+    SCORE_ITEMS.classList.remove('flex');
     SCORE_TABLE.classList.add('hidden');
     SCORE_TABLE.classList.remove('flex');
     TITLE_CATEGORY.innerHTML = link.innerText;

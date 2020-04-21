@@ -10414,6 +10414,7 @@ input.cmn-toggle-round-flat:checked + label:after {
 .score_wrapper {
   display: flex;
   justify-content: center;
+  flex-direction: column;
 }
 
 /*# sourceMappingURL=style.css.map */
