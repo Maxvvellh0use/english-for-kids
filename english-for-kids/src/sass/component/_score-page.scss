@@ -1,5 +1,18 @@
 @import "../abstract/constants";
 
+
+.score__title_buttons {
+  flex-direction: row;
+  justify-content: space-between;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  max-height: 50px;
+  @media (max-width: 767px) {
+    font-size: 10px;
+  }
+}
+
 .score__table {
   justify-content: space-between;
   width: 100%;

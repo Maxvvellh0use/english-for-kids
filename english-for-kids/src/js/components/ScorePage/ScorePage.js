@@ -1,7 +1,16 @@
 import {
-  SCORE_TABLE, SCORE_LINK, CATEGORY_PAGE_CONTAINER, SCORE_ITEMS,
+  SCORE_TABLE,
+  SCORE_LINK,
+  CATEGORY_PAGE_CONTAINER,
+  SCORE_ITEMS,
+  SCORE_TITLE,
+  OPEN_DIFFICULT_PAGE,
+  CARD_CATEGORIES,
+  BUTTON_PLAY,
+    TITLE_CATEGORY,
 } from '../../constants/constants';
 import { cards, categoryNames } from '../../cards';
+import PlayMode from "../PlayMode/PlayMode";
 
 export default class ScorePage {
   constructor() {
@@ -64,7 +73,6 @@ export default class ScorePage {
   openScorePage() {
     categoryNames.map((name, index) => {
       cards[index].map((card) => {
-        // console.log(localStorage.getItem(card.word))
         this.arrWords.push(card);
       });
     });
@@ -118,6 +126,8 @@ export default class ScorePage {
       }
     });
     SCORE_LINK.addEventListener('click', () => {
+      SCORE_TITLE.classList.remove('hidden');
+      SCORE_TITLE.classList.add('flex');
       SCORE_TABLE.classList.remove('hidden');
       SCORE_TABLE.classList.add('flex');
       CATEGORY_PAGE_CONTAINER.style.display = 'none';
@@ -132,8 +142,8 @@ export default class ScorePage {
     this.arrWords.sort((a, b) => {
       const word1 = a[this.sortKey];
       const word2 = b[this.sortKey];
-      if (word1 < word2) return -1;
-      if (word1 > word2) return 1;
+      if (word1 > word2) return -1;
+      if (word1 < word2) return 1;
       return 0;
     });
   }
@@ -152,5 +162,31 @@ export default class ScorePage {
     this.sortArray();
     this.createTextInWordLine();
     this.clickToSortButton = 1;
+  }
+
+  createDifficultPage() {
+    OPEN_DIFFICULT_PAGE.addEventListener('click', () => {
+      SCORE_TITLE.classList.add('hidden');
+      SCORE_TITLE.classList.remove('flex');
+      SCORE_TABLE.classList.add('hidden');
+      SCORE_TABLE.classList.remove('flex');
+      SCORE_ITEMS.innerHTML = '';
+      this.sortKey = 'rates';
+      this.sortArray();
+      const firstEightLine = this.arrWords.filter((line, index) => index <= 7);
+      CATEGORY_PAGE_CONTAINER.style.display = 'block';
+      this.createContentAtDifficultPage(firstEightLine);
+    })
+  }
+
+  createContentAtDifficultPage(firstEightLine) {
+    TITLE_CATEGORY.textContent = 'Training Difficult Words';
+    firstEightLine.map((line, index) => {
+      CARD_CATEGORIES[index].innerHTML = '';
+      CARD_CATEGORIES[index].insertAdjacentHTML('afterbegin', '<button class="card-body__button"><img class="svg_button" src="src/img/other/rotate.svg"></button>');
+      CARD_CATEGORIES[index].insertAdjacentHTML('afterbegin', `<div class="card-body category_card_body card_translate" style="display: none"><p class="card-text">${line.translation}</p>`);
+      CARD_CATEGORIES[index].insertAdjacentHTML('afterbegin', `<div class="card-body category_card_body category_text"><p class="card-text">${line.word}</p>`);
+      CARD_CATEGORIES[index].insertAdjacentHTML('afterbegin', `<img src="${line.image}" class="categories__cards_img">`);
+    });
   }
 }

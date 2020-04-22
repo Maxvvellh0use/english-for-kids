@@ -10,6 +10,7 @@ import {
   SCORE_TABLE,
   SCORE_ITEMS,
   MAIN_PAGE,
+  SCORE_TITLE,
 } from '../../constants/constants';
 
 export default class Categories {
@@ -30,7 +31,7 @@ export default class Categories {
     });
     MAIN_PAGE.addEventListener('click', () => {
       location.reload();
-    })
+    });
   }
 
   createContentsToCategory(indexCard, styleImg) {
@@ -62,6 +63,8 @@ export default class Categories {
         this.appendContentsToCategory(index);
       }
     });
+    SCORE_TITLE.classList.add('hidden');
+    SCORE_TITLE.classList.remove('flex');
     SCORE_ITEMS.classList.add('hidden');
     SCORE_ITEMS.classList.remove('flex');
     SCORE_TABLE.classList.add('hidden');

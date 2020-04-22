@@ -28,7 +28,11 @@ export const WIN_BLOCK = document.getElementById('win');
 export const LOSE_BLOCK = document.getElementById('lose');
 export const ERRORS = document.getElementById('errors');
 
-// scorePage
+// scorePage:
 export const SCORE_LINK = document.getElementById('scoreLink');
 export const SCORE_TABLE = document.getElementById('scoreTable');
 export const SCORE_ITEMS = document.getElementById('scoreItems');
+export const SCORE_TITLE = document.getElementById('scoreTitle');
+
+//  difficultWordsPage:
+export const OPEN_DIFFICULT_PAGE = document.getElementById('diffPage');

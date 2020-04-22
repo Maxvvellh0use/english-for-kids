@@ -25,3 +25,4 @@ playMode.buttonStartPlay();
 
 const scorePage = new ScorePage();
 scorePage.openScorePage();
+scorePage.createDifficultPage();

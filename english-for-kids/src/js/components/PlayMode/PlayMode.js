@@ -1,5 +1,4 @@
 import {
-  // eslint-disable-next-line import/named
   BUTTON_PLAY,
   CARD_CATEGORIES,
   TITLE_CATEGORY,
@@ -12,15 +11,15 @@ import {
   HAMBURGER_LINKS,
 } from '../../constants/constants';
 import { categoryNames, cards } from '../../cards';
-// eslint-disable-next-line import/no-cycle
 import Switcher from '../Switcher/Switcher';
 import Categories from '../Card/Categories';
 
 export default class PlayMode {
-  constructor() {
+  constructor(firstEightLine) {
     this.buttonStartPlay = this.buttonStartPlay.bind(this);
     this.nameAudio = [];
     this.clickPlay = 0;
+    this.firstEightLine = firstEightLine;
   }
 
   addSvgRepeat() {
