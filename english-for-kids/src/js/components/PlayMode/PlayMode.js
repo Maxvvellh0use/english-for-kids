@@ -15,11 +15,10 @@ import Switcher from '../Switcher/Switcher';
 import Categories from '../Card/Categories';
 
 export default class PlayMode {
-  constructor(firstEightLine) {
+  constructor() {
     this.buttonStartPlay = this.buttonStartPlay.bind(this);
     this.nameAudio = [];
     this.clickPlay = 0;
-    this.firstEightLine = firstEightLine;
   }
 
   addSvgRepeat() {

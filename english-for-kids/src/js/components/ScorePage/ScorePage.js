@@ -6,11 +6,10 @@ import {
   SCORE_TITLE,
   OPEN_DIFFICULT_PAGE,
   CARD_CATEGORIES,
-  BUTTON_PLAY,
-    TITLE_CATEGORY,
+  CLEAR_STORAGE_BUTTON,
+  TITLE_CATEGORY,
 } from '../../constants/constants';
 import { cards, categoryNames } from '../../cards';
-import PlayMode from "../PlayMode/PlayMode";
 
 export default class ScorePage {
   constructor() {
@@ -45,19 +44,19 @@ export default class ScorePage {
                                         <div class="score__item">${this.rates}%</div>`);
   }
 
-  addNewProps(card, word){
+  addNewProps(card, word) {
     if (localStorage.getItem(word)) {
       card.train = JSON.parse(localStorage.getItem(word))[0];
-      card.correct = JSON.parse(localStorage.getItem(word))[1];
-      card.error = JSON.parse(localStorage.getItem(word))[2];
+      card.correct = JSON.parse(localStorage.getItem(word))[2];
+      card.error = JSON.parse(localStorage.getItem(word))[1];
       card.rates = card.correct === 0 || card.error === 0 ? 0 : Math.round(card.error / card.correct * 100);
-    }
-    else {
+    } else {
       card.train = 0;
       card.correct = 0;
       card.error = 0;
       card.rates = 0;
     }
+    console.log(this.arrWords);
   }
 
   createTextInWordLine() {
@@ -65,7 +64,7 @@ export default class ScorePage {
       const { word } = card;
       const { translation } = card;
       const { category } = card;
-      this.addNewProps(card, word)
+      this.addNewProps(card, word);
       this.createWordLine(word, translation, category);
     });
   }
@@ -91,32 +90,35 @@ export default class ScorePage {
         } else {
           this.clearPageAndReverse();
         }
-      }
-      else if (event.target.classList.contains('train')) {
+      } else if (event.target.classList.contains('category')) {
+        if (this.clickToSortButton === '') {
+          this.sortKey = 'category';
+          this.createSortedWords();
+        } else {
+          this.clearPageAndReverse();
+        }
+      } else if (event.target.classList.contains('train')) {
         if (this.clickToSortButton === '') {
           this.sortKey = 'train';
           this.createSortedWords();
         } else {
           this.clearPageAndReverse();
         }
-      }
-      else if (event.target.classList.contains('correct')) {
+      } else if (event.target.classList.contains('correct')) {
         if (this.clickToSortButton === '') {
           this.sortKey = 'correct';
           this.createSortedWords();
         } else {
           this.clearPageAndReverse();
         }
-      }
-      else if (event.target.classList.contains('error')) {
+      } else if (event.target.classList.contains('error')) {
         if (this.clickToSortButton === '') {
           this.sortKey = 'error';
           this.createSortedWords();
         } else {
           this.clearPageAndReverse();
         }
-      }
-      else if (event.target.classList.contains('rates')) {
+      } else if (event.target.classList.contains('rates')) {
         if (this.clickToSortButton === '') {
           this.sortKey = 'rates';
           this.createSortedWords();
@@ -126,15 +128,17 @@ export default class ScorePage {
       }
     });
     SCORE_LINK.addEventListener('click', () => {
-      SCORE_TITLE.classList.remove('hidden');
-      SCORE_TITLE.classList.add('flex');
-      SCORE_TABLE.classList.remove('hidden');
-      SCORE_TABLE.classList.add('flex');
-      CATEGORY_PAGE_CONTAINER.style.display = 'none';
-      categoryNames.map(() => {
-        this.createTextInWordLine();
-      });
+      this.reloadScorePage();
     });
+  }
+
+  reloadScorePage() {
+    SCORE_TITLE.classList.remove('hidden');
+    SCORE_TITLE.classList.add('flex');
+    SCORE_TABLE.classList.remove('hidden');
+    SCORE_TABLE.classList.add('flex');
+    CATEGORY_PAGE_CONTAINER.style.display = 'none';
+    this.createTextInWordLine();
   }
 
 
@@ -171,12 +175,14 @@ export default class ScorePage {
       SCORE_TABLE.classList.add('hidden');
       SCORE_TABLE.classList.remove('flex');
       SCORE_ITEMS.innerHTML = '';
-      this.sortKey = 'rates';
+      this.sortKey = 'error';
       this.sortArray();
-      const firstEightLine = this.arrWords.filter((line, index) => index <= 7);
+      const firstEightLine = this.arrWords.filter((line, index) => index <= 7 && line.error !== 0);
       CATEGORY_PAGE_CONTAINER.style.display = 'block';
       this.createContentAtDifficultPage(firstEightLine);
-    })
+      this.clearStorage(firstEightLine);
+    });
+    this.clearStorage();
   }
 
   createContentAtDifficultPage(firstEightLine) {
@@ -187,6 +193,15 @@ export default class ScorePage {
       CARD_CATEGORIES[index].insertAdjacentHTML('afterbegin', `<div class="card-body category_card_body card_translate" style="display: none"><p class="card-text">${line.translation}</p>`);
       CARD_CATEGORIES[index].insertAdjacentHTML('afterbegin', `<div class="card-body category_card_body category_text"><p class="card-text">${line.word}</p>`);
       CARD_CATEGORIES[index].insertAdjacentHTML('afterbegin', `<img src="${line.image}" class="categories__cards_img">`);
+    });
+  }
+
+  clearStorage(firstEightLine) {
+    CLEAR_STORAGE_BUTTON.addEventListener('click', () => {
+      localStorage.clear();
+      SCORE_ITEMS.innerHTML = '';
+      this.reloadScorePage();
+      firstEightLine = [];
     });
   }
 }

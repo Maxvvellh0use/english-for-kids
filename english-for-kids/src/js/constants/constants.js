@@ -36,3 +36,4 @@ export const SCORE_TITLE = document.getElementById('scoreTitle');
 
 //  difficultWordsPage:
 export const OPEN_DIFFICULT_PAGE = document.getElementById('diffPage');
+export const CLEAR_STORAGE_BUTTON = document.getElementById('clearStorage');

@@ -10388,6 +10388,15 @@ input.cmn-toggle-round-flat:checked + label:after {
   margin-top: 8vw;
 }
 
+button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+
 .score__title_buttons {
   flex-direction: row;
   justify-content: space-between;
@@ -10416,6 +10425,7 @@ input.cmn-toggle-round-flat:checked + label:after {
   text-align: center;
   flex: 0 0 14%;
   border: 1px solid black;
+  border-radius: 5px;
   margin: 3px 0;
   padding: 0;
 }
@@ -10429,6 +10439,14 @@ input.cmn-toggle-round-flat:checked + label:after {
   display: flex;
   justify-content: center;
   flex-direction: column;
+}
+
+.header_item button {
+  width: 100%;
+}
+
+.border_none {
+  border: none;
 }
 
 /*# sourceMappingURL=style.css.map */
