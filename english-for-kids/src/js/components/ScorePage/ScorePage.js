@@ -39,8 +39,8 @@ export default class ScorePage {
                                         <div class="score__item header_item word_categories">${category}</div>\n
                                         <div class="score__item">${translation}</div>\n
                                         <div class="score__item">${this.train[0]}</div>\n
-                                        <div class="score__item">${this.correct[1]}</div>\n
-                                        <div class="score__item">${this.error[2]}</div>\n
+                                        <div class="score__item">${this.correct[2]}</div>\n
+                                        <div class="score__item">${this.error[1]}</div>\n
                                         <div class="score__item">${this.rates}%</div>`);
   }
 
