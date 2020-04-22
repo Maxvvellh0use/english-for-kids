@@ -11,6 +11,7 @@ import {
   SCORE_ITEMS,
   MAIN_PAGE,
   SCORE_TITLE,
+  BUTTON_PLAY,
 } from '../../constants/constants';
 
 export default class Categories {
@@ -58,17 +59,22 @@ export default class Categories {
   }
 
   openCategoryPage(link) {
+    const switcher = new Switcher();
     categoryNames.map((name, index) => {
       if (name === link.id || name === link.innerText) {
         this.appendContentsToCategory(index);
       }
     });
+    if (switcher.switcherIsChecked() && BUTTON_PLAY.style.display === 'none') {
+      BUTTON_PLAY.style.display = 'block';
+    }
     SCORE_TITLE.classList.add('hidden');
     SCORE_TITLE.classList.remove('flex');
     SCORE_ITEMS.classList.add('hidden');
     SCORE_ITEMS.classList.remove('flex');
     SCORE_TABLE.classList.add('hidden');
     SCORE_TABLE.classList.remove('flex');
+    BUTTON_PLAY.classList.remove('hidden');
     TITLE_CATEGORY.innerHTML = link.innerText;
     CATEGORY_PAGE_CONTAINER.style.display = 'block';
     MAIN_PAGE_CONTAINER.style.display = 'none';

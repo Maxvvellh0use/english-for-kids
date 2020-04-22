@@ -7,7 +7,7 @@ import {
   OPEN_DIFFICULT_PAGE,
   CARD_CATEGORIES,
   CLEAR_STORAGE_BUTTON,
-  TITLE_CATEGORY,
+  TITLE_CATEGORY, BUTTON_PLAY,
 } from '../../constants/constants';
 import { cards, categoryNames } from '../../cards';
 
@@ -56,7 +56,6 @@ export default class ScorePage {
       card.error = 0;
       card.rates = 0;
     }
-    console.log(this.arrWords);
   }
 
   createTextInWordLine() {
@@ -177,6 +176,10 @@ export default class ScorePage {
       SCORE_ITEMS.innerHTML = '';
       this.sortKey = 'error';
       this.sortArray();
+      CARD_CATEGORIES.forEach((card) => {
+        card.innerHTML = '';
+      });
+      BUTTON_PLAY.style.display = 'none';
       const firstEightLine = this.arrWords.filter((line, index) => index <= 7 && line.error !== 0);
       CATEGORY_PAGE_CONTAINER.style.display = 'block';
       this.createContentAtDifficultPage(firstEightLine);

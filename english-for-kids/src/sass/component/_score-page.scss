@@ -17,15 +17,32 @@ button {
   text-align: center;
   max-height: 50px;
   @media (max-width: 767px) {
-    font-size: 10px;
+    font-size: 10px !important;
   }
 }
+
+.score__title_buttons div button {
+  @media (max-width: 767px) {
+    font-size: 10px !important;
+  }
+}
+
+.score__title_buttons button {
+  @media (max-width: 767px) {
+    padding: 3px;
+    font-size: 9px;
+  }
+}
+
 
 .score__table {
   justify-content: space-between;
   width: 100%;
   flex-direction: row;
   flex-wrap: wrap;
+  @media (max-width: 767px) {
+    margin-top: 7px;
+  }
 }
 
 .score__item {
@@ -50,7 +67,13 @@ button {
 }
 
 .header_item button {
+  text-overflow: ellipsis;
+  overflow: hidden;
   width: 100%;
+  @media (max-width: 767px) {
+    font-size: 8px;
+    padding: 3px;
+  }
 }
 
 .border_none {

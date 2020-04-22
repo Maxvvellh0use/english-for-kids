@@ -49,7 +49,7 @@
     width: 50vw;
   }
   @media (min-width: 1020px) {
-    width: 18vw;
+    width: 21vw;
   }
 }
 
@@ -66,15 +66,18 @@
 }
 
 .hamburger_menu__list {
-  margin-top: 134px;
+  margin-top: 90px;
   @media (max-width: 767px) {
     margin-left: 0;
+    padding-left: 20px;
   }
 }
 
 
+
 .hamburger_menu__list__item {
   list-style-type: none;
+  list-style-position: inside;
   padding: 12px 0 13px 0;
 }
 

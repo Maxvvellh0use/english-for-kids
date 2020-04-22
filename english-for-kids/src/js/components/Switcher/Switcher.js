@@ -1,6 +1,6 @@
 import {
   // eslint-disable-next-line import/named
-  SWITCHER, BUTTON_PLAY, CARD_BODY_MAIN_PAGE, HAMBURGER_NAV, STARS_BLOCK,
+  SWITCHER, BUTTON_PLAY, CARD_BODY_MAIN_PAGE, HAMBURGER_NAV, STARS_BLOCK, TITLE_CATEGORY,
 } from '../../constants/constants';
 
 export default class Switcher {
@@ -26,6 +26,9 @@ export default class Switcher {
 
   switcherChecked(cardCategoryImages) {
     BUTTON_PLAY.style.display = 'block';
+    if (TITLE_CATEGORY.textContent === 'Training Difficult Words') {
+      BUTTON_PLAY.style.display = 'none';
+    }
     HAMBURGER_NAV.classList.add('menu_play');
     STARS_BLOCK.style.display = 'none';
     cardCategoryImages.forEach((image) => {

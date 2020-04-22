@@ -9875,6 +9875,46 @@ h3 {
     border-color: #dee2e6;
   }
 }
+.action_Set_A {
+  list-style-image: url("https://img.icons8.com/plasticine/25/000000/running.png");
+}
+
+.main_Page {
+  list-style-image: url("https://img.icons8.com/color/25/000000/circled-left-2.png");
+}
+
+.action_Set_B {
+  list-style-image: url("https://img.icons8.com/officel/25/000000/swimming.png");
+}
+
+.animal_Set_A {
+  list-style-image: url("https://img.icons8.com/color/25/000000/flying-stork.png");
+}
+
+.animal_Set_B {
+  list-style-image: url("https://img.icons8.com/color/25/000000/cute-hamster.png");
+}
+
+.clothesIcon {
+  list-style-image: url("https://img.icons8.com/color/25/000000/clothes.png");
+}
+
+.emotionsIcon {
+  list-style-image: url("https://img.icons8.com/officexs/25/000000/crazy.png");
+}
+
+.professionsIcon {
+  list-style-image: url("https://img.icons8.com/color/25/000000/doctor-male--v1.png");
+}
+
+.colorsIcon {
+  list-style-image: url("https://img.icons8.com/color/25/000000/ios-photos.png");
+}
+
+.scoreIcon {
+  list-style-image: url("https://img.icons8.com/color/25/000000/positive-dynamic.png");
+}
+
 a {
   color: #545454 !important;
   text-decoration: none !important;
@@ -10221,7 +10261,7 @@ input.cmn-toggle-round-flat:checked + label:after {
 }
 @media (min-width: 1020px) {
   .header__hamburger_menu {
-    width: 18vw;
+    width: 21vw;
   }
 }
 
@@ -10238,16 +10278,18 @@ input.cmn-toggle-round-flat:checked + label:after {
 }
 
 .hamburger_menu__list {
-  margin-top: 134px;
+  margin-top: 90px;
 }
 @media (max-width: 767px) {
   .hamburger_menu__list {
     margin-left: 0;
+    padding-left: 20px;
   }
 }
 
 .hamburger_menu__list__item {
   list-style-type: none;
+  list-style-position: inside;
   padding: 12px 0 13px 0;
 }
 
@@ -10407,7 +10449,20 @@ button {
 }
 @media (max-width: 767px) {
   .score__title_buttons {
-    font-size: 10px;
+    font-size: 10px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .score__title_buttons div button {
+    font-size: 10px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .score__title_buttons button {
+    padding: 3px;
+    font-size: 9px;
   }
 }
 
@@ -10416,6 +10471,11 @@ button {
   width: 100%;
   flex-direction: row;
   flex-wrap: wrap;
+}
+@media (max-width: 767px) {
+  .score__table {
+    margin-top: 7px;
+  }
 }
 
 .score__item {
@@ -10442,7 +10502,15 @@ button {
 }
 
 .header_item button {
+  text-overflow: ellipsis;
+  overflow: hidden;
   width: 100%;
+}
+@media (max-width: 767px) {
+  .header_item button {
+    font-size: 8px;
+    padding: 3px;
+  }
 }
 
 .border_none {
