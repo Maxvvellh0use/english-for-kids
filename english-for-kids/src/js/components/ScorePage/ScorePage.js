@@ -33,7 +33,7 @@ export default class ScorePage {
       this.correct = JSON.parse(localStorage.getItem(word));
       this.error = JSON.parse(localStorage.getItem(word));
     }
-    this.correct[1] === 0 || this.error[2] === 0 ? this.rates = 0 : this.rates = Math.round(this.correct[2] / this.error[1] * 100);
+    this.correct[1] === 0 || this.error[2] === 0 ? this.rates = 0 : this.rates = Math.round(this.error[1] / this.correct[2] * 100);
     SCORE_ITEMS.classList.add('flex');
     SCORE_ITEMS.insertAdjacentHTML('beforeend', `<div class="score__item header_item word">${word}</div>\n
                                         <div class="score__item header_item word_categories">${category}</div>\n
@@ -49,7 +49,7 @@ export default class ScorePage {
       card.train = JSON.parse(localStorage.getItem(word))[0];
       card.correct = JSON.parse(localStorage.getItem(word))[2];
       card.error = JSON.parse(localStorage.getItem(word))[1];
-      card.rates = card.correct === 0 || card.error === 0 ? 0 : Math.round(card.correct / card.error * 100);
+      card.rates = card.correct === 0 || card.error === 0 ? 0 : Math.round(card.error / card.correct * 100);
     } else {
       card.train = 0;
       card.correct = 0;
