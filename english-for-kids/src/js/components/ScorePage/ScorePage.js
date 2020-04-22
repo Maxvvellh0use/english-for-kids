@@ -169,12 +169,12 @@ export default class ScorePage {
 
   createDifficultPage() {
     OPEN_DIFFICULT_PAGE.addEventListener('click', () => {
+      this.sortKey = 'rates';
       SCORE_TITLE.classList.add('hidden');
       SCORE_TITLE.classList.remove('flex');
       SCORE_TABLE.classList.add('hidden');
       SCORE_TABLE.classList.remove('flex');
       SCORE_ITEMS.innerHTML = '';
-      this.sortKey = 'rates';
       this.sortArray();
       CARD_CATEGORIES.forEach((card) => {
         card.innerHTML = '';
