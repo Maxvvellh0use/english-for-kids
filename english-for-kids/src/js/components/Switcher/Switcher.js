@@ -1,5 +1,4 @@
 import {
-  // eslint-disable-next-line import/named
   SWITCHER, BUTTON_PLAY, CARD_BODY_MAIN_PAGE, HAMBURGER_NAV, STARS_BLOCK, TITLE_CATEGORY,
 } from '../../constants/constants';
 

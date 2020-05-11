@@ -1,3 +1,3 @@
 # english-for-kids
 english language training app on native JS and SASS  
-[Deployed my Keyboard](https://mystifying-benz-494772.netlify.com/) 
+[Deployed my project](https://maxvvellh0use-english-for-kids.netlify.app) 
