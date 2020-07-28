@@ -1,3 +1,7 @@
 # english-for-kids
-english language training app on native JS and SASS  
-[Deployed my project](https://maxvvellh0use-english-for-kids.netlify.app) 
+
+### [Link to deploy](https://maxvvellh0use-english-for-kids.netlify.app) 
+
+English language training app on native JS and SASS  
+
+On the project used core js library, webpack and preprocessor SASS
