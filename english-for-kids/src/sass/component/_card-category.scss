@@ -1,0 +1,78 @@
+@import "../abstract/constants";
+
+.categories__cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100% !important;;
+}
+
+.card {
+  max-width: 18rem;
+  max-height: 18rem;
+  margin: 10px;
+  flex: 1 0 20%;
+  transition: all ease-out .3s;
+  @media (max-width: 1020px) {
+    flex: 1 0 35%;
+    max-width: 20rem;
+    max-height: 20rem;
+  }
+  @media (max-width: 767px) {
+    flex: 1 0 50%;
+  }
+  @media (max-width: 360px) {
+    flex: 1 0 65%;
+  }
+}
+
+.card_play {
+  box-shadow: 0 0 0 4px darkorange;
+}
+
+.card-body {
+  background: $color-card-body;
+  text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+}
+
+.card_body_play {
+  background: $color-background-checkbox;
+  color: $color-text-card-play;
+}
+
+
+.category_card_body {
+  height: 30px;
+  background: $color-category-card-body;
+  transition: all ease-out .3s;
+}
+
+.card-text {
+  text-align: center;
+}
+
+.card-img-top {
+  max-height: 10rem;
+}
+
+.card_main:hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 10px $color-text-card;
+}
+
+
+
+.card_to_hover:hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 10px $color-text-card;
+}
+
+.card_correct {
+  opacity: .7;
+}
+
+
+
+
+
+

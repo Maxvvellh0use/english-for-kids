@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>english for kids</title>
+    <link rel="shortcut icon" href="#" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+<div class="popup_blackout" id="popup_blackout">
+</div>
+    <header id="header">
+        <nav>
+            <div class="header__hamburger_menu" id="hamburger_menu">
+                <div class="hamburger_menu__nav" id="hamburger_list">
+                    <nav>
+                        <ul class="hamburger_menu__list" id="hamburger_menu__list">
+                            <li class="hamburger_menu__list__item main_Page" id="main_page_link"><a class="links">Main Page</a></li>
+                            <li class="hamburger_menu__list__item action_Set_A"><a class="link">Action (set A)</a></li>
+                            <li class="hamburger_menu__list__item action_Set_B"><a class="link">Action (set B)</a></li>
+                            <li class="hamburger_menu__list__item animal_Set_A"><a class="link">Animal (set A)</a></li>
+                            <li class="hamburger_menu__list__item animal_Set_B"><a class="link">Animal (set B)</a></li>
+                            <li class="hamburger_menu__list__item clothesIcon"><a class="link">Clothes</a></li>
+                            <li class="hamburger_menu__list__item emotionsIcon"><a class="link">Emotions</a></li>
+                            <li class="hamburger_menu__list__item professionsIcon"><a class="link">Professions</a></li>
+                            <li class="hamburger_menu__list__item colorsIcon"><a class="link">Colors</a></li><br><br>
+                            <li class="hamburger_menu__list__item scoreIcon" id="score_link"><a class="link" id="scoreLink">Score</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="hamburger_and_switch">
+                <div class="header__hamburger" id="hamburger">
+                    <div class="hamburger_line"></div>
+                    <div class="hamburger_line center"></div>
+                    <div class="hamburger_line"></div>
+                </div>
+                <div>
+                    <h2 class="header_title" id="header_title"></h2>
+                </div>
+                <div class="onoffswitch2">
+                    <input type="checkbox" name="onoffswitch2" class="onoffswitch2-checkbox" id="myonoffswitch2">
+                    <label class="onoffswitch2-label" for="myonoffswitch2">
+                        <span class="onoffswitch2-inner"></span>
+                        <span class="onoffswitch2-switch"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </header>
+        <main>
+            <section class="categories">
+                <div class="container main_container" id="main_page">
+                    <div class="categories__cards">
+                        <div class="card card_main" id="Action (set A)">
+                            <img src="src/img/mainPage/actionA.jpg" class="card-img-top" alt="...">
+                            <div class="card-body card_body_main">
+                                <h5 class="card-text">Action (set A)</h5>
+                            </div>
+                        </div>
+                        <div class="card card_main" id="Action (set B)">
+                            <img src="src/img/mainPage/actionB.jpg" class="card-img-top" alt="...">
+                            <div class="card-body card_body_main">
+                                <h5 class="card-text">Action (set B)</h5>
+                            </div>
+                        </div>
+                        <div class="card card_main" id="Animal (set A)">
+                            <img src="src/img/mainPage/animalA.jpg" class="card-img-top" alt="...">
+                            <div class="card-body card_body_main">
+                                <h5 class="card-text">Animal (set A)</h5>
+                            </div>
+                        </div>
+                        <div class="card card_main" id="Animal (set B)">
+                            <img src="src/img/mainPage/animalB.jpg" class="card-img-top" alt="...">
+                            <div class="card-body card_body_main">
+                                <h5 class="card-text">Animal (set B)</h5>
+                            </div>
+                        </div>
+                        <div class="card card_main" id="Clothes">
+                            <img src="src/img/mainPage/clothes.jpg" class="card-img-top" alt="...">
+                            <div class="card-body card_body_main">
+                                <h5 class="card-text">Clothes</h5>
+                            </div>
+                        </div>
+                        <div class="card card_main" id="Emotions">
+                            <img src="src/img/mainPage/emotions.jpg" class="card-img-top" alt="...">
+                            <div class="card-body card_body_main">
+                                <h5 class="card-text">Emotions</h5>
+                            </div>
+                        </div>
+                        <div class="card card_main" id="Professions">
+                            <img src="src/img/mainPage/professions.jpg" class="card-img-top" alt="...">
+                            <div class="card-body card_body_main">
+                                <h5 class="card-text">Professions</h5>
+                            </div>
+                        </div>
+                        <div class="card card_main" id="Colors">
+                            <img src="src/img/mainPage/colors.jpeg" class="card-img-top" alt="...">
+                            <div class="card-body card_body_main">
+                                <h5 class="card-text">Colors</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container category_container" id="category_page">
+                    <div class="categories__cards">
+                        <div class="card  card_category card_to_hover">
+                            <div class="card-body category_card_body">
+                                <p class="card-text"></p>
+                                <button class="card-body__button"><img class="svg_button" src="src/img/words/rotate.svg"></button>
+                            </div>
+                        </div>
+                        <div class="card  card_category card_to_hover">
+                            <div class="card-body category_card_body">
+                                <p class="card-text"></p>
+                                <button class="card-body__button"><img class="svg_button" src="src/img/words/rotate.svg"></button>
+                            </div>
+                        </div>
+                        <div class="card  card_category card_to_hover">
+                            <div class="card-body category_card_body">
+                                <p class="card-text"></p>
+                                <button class="card-body__button"><img class="svg_button" src="src/img/words/rotate.svg"></button>
+                            </div>
+                        </div>
+                        <div class="card  card_category card_to_hover">
+                            <div class="card-body category_card_body">
+                                <p class="card-text"></p>
+                                <button class="card-body__button"><img class="svg_button" src="src/img/words/rotate.svg"></button>
+                            </div>
+                        </div>
+                        <div class="card  card_category card_to_hover">
+                            <div class="card-body category_card_body">
+                                <p class="card-text"></p>
+                                <button class="card-body__button"><img class="svg_button" src="src/img/words/rotate.svg"></button>
+                            </div>
+                        </div>
+                        <div class="card  card_category card_to_hover">
+                            <div class="card-body category_card_body">
+                                <p class="card-text"></p>
+                                <button class="card-body__button"><img class="svg_button" src="src/img/words/rotate.svg"></button>
+                            </div>
+                        </div>
+                        <div class="card  card_category card_to_hover">
+                            <div class="card-body category_card_body">
+                                <p class="card-text"></p>
+                                <button class="card-body__button"><img class="svg_button" src="src/img/words/rotate.svg"></button>
+                            </div>
+                        </div>
+                        <div class="card  card_category card_to_hover">
+                            <div class="card-body category_card_body">
+                                <p class="card-text"></p>
+                                <button class="card-body__button"><img class="svg_button" src="src/img/words/rotate.svg"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stars_block">
+                        <div class="stars_block__stars" id="stars">
+                        </div>
+                    </div>
+                    <div class="button_play">
+                        <div class="button_play__button">
+                        <button type="button" class="btn btn-secondary" id="button_play">START PLAY</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="total">
+                <div class="wrapper_total">
+                    <div class="total__win_image" id="win">
+                        <img src="src/img/words/success.jpg">
+                        <p><h2 class="card-text">CONGRATULATIONS!</h2></p>
+                    </div>
+                    <div class="total__lose_image" id="lose">
+                        <img src="src/img/words/failure.jpg">
+                        <p><h2 class="card-text">Try again(</h2></p>
+                        <div class="card-text errors" id="errors"></div>
+                    </div>
+                </div>
+            </section>
+            <section class="score">
+                <div class="wrapper score_wrapper">
+                    <div class="score__title_buttons hidden" id="scoreTitle">
+                        <div><button class="btn btn-success" id="diffPage">Repeat difficult words</button></div>
+                        <div><p>1 клик по клавише сортировки - реверс, 2 клик - сортировка :)</p></div>
+                        <div><button class="btn btn-danger" id="clearStorage">RESET</button></div>
+                    </div>
+                    <div class="score__table hidden table table-striped" id="scoreTable">
+                        <div class="score__item header_item border_none"><button class="words btn btn-secondary" type="button">Words</button></div>
+                        <div class="score__item header_item border_none"><button class="category btn btn-secondary" type="button">Categories</button></div>
+                        <div class="score__item header_item border_none"><button class="translation btn btn-secondary" type="button">Translation</button></div>
+                        <div class="score__item header_item border_none"><button class="train btn btn-secondary" type="button">Train Mode</button></div>
+                        <div class="score__item header_item border_none"><button class="correct btn btn-secondary" type="button">Correct</button></div>
+                        <div class="score__item header_item border_none"><button class="error btn btn-secondary" type="button">Error</button></div>
+                        <div class="score__item header_item border_none"><button class="rates btn btn-secondary" type="button">Error rates</button></div>
+                    </div>
+                    <div class="score__table hidden" id="scoreItems">
+                    </div>
+                </div>
+            </section>
+        </main>
+</body>
+</html>

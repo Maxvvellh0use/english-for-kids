@@ -1,0 +1,48 @@
+@import "../abstract/constants";
+
+body {
+
+}
+
+a {
+  color: $color-links !important;
+  text-decoration: none !important;
+}
+
+.categories {
+  width: 100%;
+}
+.wrapper {
+  display: flex;
+  width: 100%;
+  max-width: 1250px;
+  padding: 0 40px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1250px;
+  overflow: hidden;
+}
+
+.category_container {
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.flex {
+  display: flex;
+}
+
+.shown {
+  display: block;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}

@@ -1,0 +1,29 @@
+.card_category {
+  height: 15rem;
+  overflow: hidden;
+}
+
+.categories__cards_img {
+  max-height: 10rem;
+  transition: all ease-out .3s;
+}
+
+.category_card_body {
+  height: 0 !important;
+}
+
+.category_card_body button {
+  opacity: 0;
+  height: 0 !important;
+}
+
+.card-text {
+  font-weight: bolder;
+}
+
+.card-translate {
+  margin: 0;
+  z-index: 30;
+  font-weight: bolder;
+  text-align: center;
+}

@@ -1,0 +1,16 @@
+.hamburger_and_switch {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 40px 12px;
+}
+
+.header_title {
+  @media (min-width: 1020px) {
+    font-size: 30px;
+  }
+  @media (max-width: 1020px) {
+    font-size: 20px;
+  }
+
+}
